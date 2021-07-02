@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from './components/myNav.js';
 
-function App() {
-  return (
+import React, {Component} from 'react';
+import { SideBar } from './components/SideBar/SideBar.js';
+import { motion, Scroll, useCycle } from "framer-motion";
+import {Frame, Scroll as FramerScroll} from 'framer';
+import './styles.css';
+export default class App extends Component {
+  
+  render(){
+    return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      
+      <SideBar/>
+      <FramerScroll direction={'vertical'} onTap={{scale: 2, radius: 30, rotate:90}} >
+        <Frame radius={30}>Hello world</Frame>
+        <Frame radius={30}>Content2</Frame>
+        <Frame radius={30}>Content3</Frame>
+        <Frame radius={30}>Content4</Frame>
+      </FramerScroll>
 
-export default App;
+    </div>
+  );}
+}
