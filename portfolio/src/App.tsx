@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
 import Projects from './Pages/Projects/Projects'
+import { AnimatePresence } from 'framer-motion';
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,6 +38,7 @@ class App extends Component {
           you have multiple routes, but you want only one
           of them to render at a time
         */}
+        <AnimatePresence exitbeforeenter>
         <Switch>
           <Route exact path="/">
             <Home text='hello world' onTap={console.log('hello world')} style={{color:'blue'}} />
@@ -48,6 +50,7 @@ class App extends Component {
             <Projects text='hello world2' onTap={console.log('hello world2')} style={{color:'blue'}} />
           </Route>
         </Switch>
+        </AnimatePresence>
       </div>
     </Router>
   );
