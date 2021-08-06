@@ -1,57 +1,31 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
-import Home from '../../Pages/Home/Home';
-import Projects from '../../Pages/Projects/Projects';
-import About from '../../Pages/About/About';
-import { AnimatePresence } from 'framer-motion';
+import {Link} from 'react-router-dom'
+import { rootCertificates } from 'tls'
+import MotionDiv from '../MotionDiv/MotionDiv'
+const Navlink = () => {
+        
+}
+
 const NavBar = () => {
     return (
-        <div>
-            <Router>
-            <div  >
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/projects">Projects</Link>
-                    </li>
-                </ul>
-
-                <hr />
-
-                {/*
-                A <Switch> looks through all its children <Route>
-                elements and renders the first one whose path
-                matches the current URL. Use a <Switch> any time
-                you have multiple routes, but you want only one
-                of them to render at a time
-                */}
-                <AnimatePresence>
-                    <Switch>
-                        <Route exact path="/">
-                            <Home text='hello world' onTap={console.log('hello world')} style={{color:'blue'}} />
-                        </Route>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/projects">
-                            <Projects text='hello world2' onTap={console.log('hello world2')} style={{color:'blue'}} />
-                        </Route>
-                    </Switch>
-                </AnimatePresence>
-            </div>
-            </Router>
+        <div style={containerStyle}>
+            <Link to="/"> <MotionDiv text='Home' onTap={{rotate: 10}} whileTap={{rotate: 10}} style={NavLinkStyle} /> </Link>
+            <Link to="/projects"> <MotionDiv text='Projects' onTap={null} whileTap={null} style={NavLinkStyle} /> </Link>
+            <Link to="/About"> <MotionDiv text='About' onTap={null} whileTap={null} style={NavLinkStyle} /> </Link>
         </div>
     )
 }
 
+
 export default NavBar
+
+const containerStyle = {
+    display: "flex",
+    justifyContent: "center",
+    overflow: "hidden",
+    background: "#6B6B6B",
+}
+const NavLinkStyle = {
+    margin: 10,
+    padding: 10
+}

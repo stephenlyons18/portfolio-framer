@@ -1,25 +1,14 @@
 import { motion } from "framer-motion"
 
+
 // Learn more: https://www.framer.com/docs/guides/code-components/
 
-export default function Home(props: { text: any; onTap: any; style: any }) {
-    const { text, onTap, style } = props
+export default function Home() {
+    
 
-    // "...style" enables switching between auto & fixed sizing
-    // Learn more: https://www.framer.com/docs/guides/auto-sizing
     return (
-        <motion.div style={{ ...style, ...containerStyle }}>
-            <motion.div
-                style={squareStyle}
-                onTap={onTap}
-                whileTap={{
-                    scale: 1.25,
-                    rotate: 90,
-                    backgroundColor: "#07F",
-                }}
-            >
-                {text}
-            </motion.div>
+        <motion.div style={containerStyle}>
+            Hello
         </motion.div>
     )
 }
@@ -33,6 +22,9 @@ const containerStyle = {
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden",
+    background: "linear-gradient(to right, #A5FECB, #20BDFF, #5433FF)", /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 const squareStyle = {

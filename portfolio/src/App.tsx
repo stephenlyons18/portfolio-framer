@@ -1,18 +1,41 @@
 import React, {Component} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom'
 
-import { color } from 'style-value-types'
+import Home from './Pages/Home/Home';
+import Projects from './Pages/Projects/Projects';
+import About from './Pages/About/About';
+import { AnimatePresence } from 'framer-motion';
 import NavBar from './components/NavBar/NavBar';
-import RouterWrap from './components/Router/RouterWrap';
 
-class App extends Component {
-  render(){
+
+function App() {
+  
   return (
     <div>
-      <RouterWrap/>
+      <Router>
       <NavBar/>
+      <AnimatePresence>
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route path="/about">
+                <About />
+            </Route>
+            <Route path="/projects">
+                <Projects text='hello world2' onTap={console.log('hello world2')} style={{color:'blue'}} />
+            </Route>
+        </Switch>
+      </AnimatePresence>
+
+    </Router>
     </div>
   );
-  }
+  
 }
 
 export default App;
