@@ -21,11 +21,11 @@ export default NavBar
 
 const containerStyle = {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     overflow: "hidden",
     background: "#6B6B6B",
+    
 }
 const NavLinkStyle = {
-    margin: 10,
     padding: 10
 }

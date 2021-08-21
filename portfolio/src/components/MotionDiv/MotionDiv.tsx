@@ -30,15 +30,14 @@ const containerStyle = {
     alignItems: "center",
     overflow: "hidden",
     margin: 50,
-    borderRadius: 25
 }
 
 const squareStyle = {
-    margin: 50,
-    padding: 50,
+    
+    padding: 30,
     color: "white",
     fontWeight: 600,
-    borderRadius: 25,
+    borderRadius: 15,
     backgroundColor: "#09F",
     width: "max-content",
     whiteSpace: "pre-wrap",
