@@ -27,7 +27,7 @@ function App() {
                 <About />
             </Route>
             <Route path="/projects">
-                <Projects text='hello world2' onTap={console.log('hello world2')} style={{color:'blue'}} />
+                <Projects />
             </Route>
         </Switch>
       </AnimatePresence>

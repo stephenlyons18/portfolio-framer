@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { rootCertificates } from 'tls'
-import MotionDiv from '../MotionDiv/MotionDiv'
+
+
 const Navlink = () => {
         
 }
@@ -9,9 +10,9 @@ const Navlink = () => {
 const NavBar = () => {
     return (
         <div style={containerStyle}>
-            <Link to="/"> <MotionDiv text='Home' onTap={{rotate: 10}} whileTap={{rotate: 10}} style={NavLinkStyle} /> </Link>
-            <Link to="/projects"> <MotionDiv text='Projects' onTap={null} whileTap={null} style={NavLinkStyle} /> </Link>
-            <Link to="/About"> <MotionDiv text='About' onTap={null} whileTap={null} style={NavLinkStyle} /> </Link>
+            <Link to="/"> <motion.div whileTap={{rotate: 10}} style={NavLinkStyle} >Home</motion.div> </Link>
+            <Link to="/projects"> <motion.div whileTap={{rotate: 10}} style={NavLinkStyle} >Projects</motion.div> </Link>
+            <Link to="/About"> <motion.div style={NavLinkStyle} whileTap={{rotate: 10}}>About</motion.div></Link>
         </div>
     )
 }
@@ -27,5 +28,9 @@ const containerStyle = {
     
 }
 const NavLinkStyle = {
-    padding: 10
+    padding: 10,
+    margin: 20,
+    borderRadius: 10,
+    background: "#33658a"
+
 }
