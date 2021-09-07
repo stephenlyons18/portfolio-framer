@@ -24,6 +24,8 @@ input:focus{
 input{
     font-size: 5vw;
     align-items: center;
-    caret-color: white;
-    text-shadow: 0 0 100px #888;
+}
+::placeholder{
+    background-color: transparent;
+    color: darkslategray;
 }

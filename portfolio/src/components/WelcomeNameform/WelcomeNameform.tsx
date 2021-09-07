@@ -18,7 +18,7 @@ class WelcomeNameform extends React.Component<
     }
 > {
     state = {
-        text: 'Type your name here',
+        text: '',
         typed: false,
     };
 
@@ -26,13 +26,11 @@ class WelcomeNameform extends React.Component<
     onChange = (e: React.FormEvent<HTMLInputElement>): void => {
         this.setState({ text: e.currentTarget.value });
         this.setState({ typed: true });
-        console.log('test');
     };
 
     render() {
         return (
             <motion.div className="containerStyle">
-                <h1>Type your name here</h1>
                 <br />
                 <div className="flexContainer">
                     <motion.div
@@ -49,12 +47,12 @@ class WelcomeNameform extends React.Component<
                     </motion.div>
 
                     <motion.input
-                        whileFocus={{ scale: 0.95 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileFocus={{ scale: 0.9 }}
                         type="text"
                         value={this.state.text}
                         onChange={this.onChange}
                         className="inputStyle"
+                        placeholder="type your name here"
                         autoFocus
                     />
                 </div>

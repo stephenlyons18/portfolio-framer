@@ -10,6 +10,7 @@
 .flexContainer{
     display: flex;
     align-items: center;
+    width: 80vw;
 }
 .containerStyle{
     margin-top: -300px;
