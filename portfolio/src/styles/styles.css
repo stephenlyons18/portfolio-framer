@@ -6,3 +6,24 @@ body, html{
 h1,h2,h3,h4{
     font-family: 'Source Sans Pro';
 }
+h1{
+    font-size: 6vw;
+}
+h2{
+    font-size: 4vw;
+}
+h3{
+    font-size: 2vw;
+}
+h4{
+    font-size: 1vw;
+}
+input:focus{
+    outline: none;
+}
+input{
+    font-size: 5vw;
+    align-items: center;
+    caret-color: white;
+    text-shadow: 0 0 100px #888;
+}
