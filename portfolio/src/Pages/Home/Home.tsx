@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import WelcomeNameform from '../../components/WelcomeNameform/WelcomeNameform';
 import Card from '@mui/material/Card';
+import IntroCard from '../../components/IntroCard/IntroCard';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
 
@@ -16,6 +17,7 @@ export default function Home() {
                 animate="show"
             >
                 <WelcomeNameform />
+                <IntroCard />
                 <Card>Hello World</Card>
             </motion.div>
         </motion.div>
