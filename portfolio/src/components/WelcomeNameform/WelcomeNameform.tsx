@@ -11,12 +11,13 @@ const caretVariants = {
 
 class WelcomeNameform extends React.Component<
     {},
-    {
-        // no props
-        text: string;
-        typed: boolean;
-    }
+    { text: string; typed: boolean }
 > {
+    // constructor(props){
+    //     super(props);
+
+    // }
+
     state = {
         text: '',
         typed: false,
@@ -26,6 +27,21 @@ class WelcomeNameform extends React.Component<
     onChange = (e: React.FormEvent<HTMLInputElement>): void => {
         this.setState({ text: e.currentTarget.value });
         this.setState({ typed: true });
+    };
+    onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+        if (e.key === 'Enter') {
+            this.handleSubmit();
+        }
+    };
+    returnName = () => {
+        return this.state.text;
+    };
+
+    handleSubmit = () => {
+        var name = this.returnName();
+        if (name === '' || name == null) {
+            name = 'World';
+        }
     };
 
     render() {
