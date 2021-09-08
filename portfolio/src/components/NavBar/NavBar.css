@@ -1,0 +1,17 @@
+.NavContainerStyle{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #2f4858;
+}
+.NavLinkStyle{
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    background: #33658a;
+    text-decoration: none;
+}
+.noDecor{
+    text-decoration: none;
+    text-transform: capitalize;
+}
