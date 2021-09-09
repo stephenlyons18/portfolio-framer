@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CaretRight } from 'phosphor-react';
-import '../../styles/styles.css';
+import '../../assets/styles/styles.css';
 import './WelcomeNameform.css';
 
 const caretVariants = {
