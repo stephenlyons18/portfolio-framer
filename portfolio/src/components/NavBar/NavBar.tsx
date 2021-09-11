@@ -6,8 +6,6 @@ import { Chat } from 'phosphor-react';
 import ContactOverlay from '../ContactOverlay/ContactOverlay';
 import { setConstantValue } from 'typescript';
 
-const Navlink = () => {};
-
 const NavBar = () => {
     const [open, setOpen] = useState('closed');
     return (
