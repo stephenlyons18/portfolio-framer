@@ -1,21 +1,27 @@
-.NavContainerStyle{
+.NavContainerStyle {
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
     background: #2f4858;
 }
-.NavLinkStyle{
+.NavLinkStyle {
     padding: 10px;
     margin: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     background: #33658a;
     text-decoration: none;
 }
-.noDecor{
+.noDecor {
     text-decoration: none;
     text-transform: capitalize;
+    color: #000;
+    transition: all 0.4s ease;
+
+    &:hover {
+        color: white;
+    }
 }
-.contactButtonStyle{
+.contactButtonStyle {
     background-color: #4da167;
     border-radius: 40;
 }
