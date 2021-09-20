@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import WelcomeNameform from '../../components/WelcomeNameform/WelcomeNameform';
 import Card from '@mui/material/Card';
 import IntroCard from '../../components/IntroCard/IntroCard';
+import './HomeStyles.scss';
+import TypewriterComponent from 'typewriter-effect';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
-
+let pause: number = 1500;
 export default function Home() {
     return (
         <motion.div style={containerStyle}>
@@ -16,7 +18,14 @@ export default function Home() {
                 }}
                 animate="show"
             >
-                <WelcomeNameform />
+                <TypewriterComponent
+                    options={{
+                        strings: ['Hello\nworld', 'World'],
+                        autoStart: true,
+                        loop: true,
+                        pauseFor: '1500',
+                    }}
+                />
                 <IntroCard />
                 <Card>Hello World</Card>
             </motion.div>
