@@ -1,0 +1,27 @@
+.welcomeText {
+    font-size: 5vw;
+    font-weight: bold;
+    padding-bottom: 20vh;
+}
+
+.containerStyle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right, #a5fecb, #20bdff, #5433ff)
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    min-height: 100vh;
+    width: 100%;
+}
+.introCards {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-top: 15%;
+    background: darkgrey;
+    padding-top: 2%;
+    border-radius: 25px;
+}

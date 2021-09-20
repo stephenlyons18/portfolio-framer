@@ -3,13 +3,15 @@ import WelcomeNameform from '../../components/WelcomeNameform/WelcomeNameform';
 import Card from '@mui/material/Card';
 import IntroCard from '../../components/IntroCard/IntroCard';
 import './HomeStyles.scss';
-import TypewriterComponent from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
+import { AnimateSharedLayout } from 'framer-motion';
+import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
-let pause: number = 1500;
+
 export default function Home() {
     return (
-        <motion.div style={containerStyle}>
+        <motion.div className="containerStyle">
             <motion.div
                 variants={introText}
                 initial="hidden"
@@ -18,17 +20,26 @@ export default function Home() {
                 }}
                 animate="show"
             >
-                <TypewriterComponent
-                    options={{
-                        strings: ['Hello\nworld', 'World'],
-                        autoStart: true,
-                        loop: true,
-                        pauseFor: '1500',
-                    }}
-                />
-                <IntroCard />
-                <Card>Hello World</Card>
+                <motion.div className="welcomeText">
+                    <Typewriter
+                        options={{
+                            strings: [
+                                'Hello',
+                                'My Name is Stephen',
+                                'I am a Student and Web Developer at CSULB',
+                            ],
+                            autoStart: true,
+                            cursor: 'l',
+                            loop: true,
+                        }}
+                    />
+                </motion.div>
+                {/* <Card>Hello World</Card> */}
             </motion.div>
+            {/* <AnimateSharedLayout> */}
+            <motion.div className="introCards"></motion.div>
+            <IntroCards />
+            {/* </AnimateSharedLayout> */}
         </motion.div>
     );
 }
@@ -40,16 +51,6 @@ Home.defaultProps = {
 const introText = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
-};
-
-const containerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-    background:
-        'linear-gradient(to right, #A5FECB, #20BDFF, #5433FF)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
-    height: '100vh',
 };
 
 const squareStyle = {
