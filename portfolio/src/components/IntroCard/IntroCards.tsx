@@ -57,4 +57,4 @@ function Content() {
     );
 }
 
-const items = [0, 1, 2];
+const items = [{}, {}, {}, {}];
