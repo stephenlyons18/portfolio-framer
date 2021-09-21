@@ -38,7 +38,10 @@ const NavBar = () => {
                         ABOUT
                     </motion.div>
                 </Link>
-                <motion.div whileTap={{ scale: 0.9 }} className="NavLinkStyle">
+                <motion.div
+                    whileTap={{ scale: 0.9 }}
+                    className="contactButtonStyle"
+                >
                     <Chat
                         size={48}
                         onClick={() => {
@@ -50,8 +53,6 @@ const NavBar = () => {
                         }}
                     />
                 </motion.div>
-
-                <ContactOverlay open="open" />
             </div>
         </nav>
     );

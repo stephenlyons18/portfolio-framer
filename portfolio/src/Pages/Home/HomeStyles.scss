@@ -1,7 +1,14 @@
 .welcomeText {
     font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-weight: bold;
     padding-bottom: 20vh;
+    flex-direction: column;
+}
+.helloText {
+    padding-top: 20vh;
 }
 
 .containerStyle {
@@ -24,4 +31,13 @@
     background: darkgrey;
     padding-top: 2%;
     border-radius: 25px;
+}
+.iAmClass {
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-bottom: 20vh;
+    flex-direction: row;
 }

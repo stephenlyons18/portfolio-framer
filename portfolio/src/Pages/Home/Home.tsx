@@ -8,7 +8,9 @@ import { AnimateSharedLayout } from 'framer-motion';
 import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
-
+function randomHeight() {
+    return Number(Math.random() * (500 - 300 + 1) + 300);
+}
 export default function Home() {
     return (
         <motion.div className="containerStyle">
@@ -21,23 +23,43 @@ export default function Home() {
                 animate="show"
             >
                 <motion.div className="welcomeText">
-                    <Typewriter
-                        options={{
-                            strings: [
-                                'Hello',
-                                'My Name is Stephen',
-                                'I am a Student and Web Developer at CSULB',
-                            ],
-                            autoStart: true,
-                            cursor: 'l',
-                            loop: true,
-                        }}
-                    />
+                    <div className="helloText">
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .typeString('Hello! My name is Stephen')
+                                    .callFunction(() => {
+                                        console.log('All strings were deleted');
+                                    })
+                                    .start();
+                            }}
+                        />
+                    </div>
+                    <div className="iAmClass">
+                        <p style={{ paddingRight: '2vw' }}>I am a </p>
+                        <Typewriter
+                            options={{
+                                strings: [
+                                    '  Student',
+                                    '  Web Developer',
+                                    '  Freelancer',
+                                ],
+                                autoStart: true,
+                                cursor: 'l',
+                                loop: true,
+                            }}
+                        />
+                    </div>
                 </motion.div>
                 {/* <Card>Hello World</Card> */}
             </motion.div>
             {/* <AnimateSharedLayout> */}
-            <motion.div className="introCards"></motion.div>
+            <motion.div className="introCards">
+                <IntroCard height={randomHeight()} />
+                <IntroCard height={randomHeight()} />
+                <IntroCard height={randomHeight()} />
+                <IntroCard height={randomHeight()} />
+            </motion.div>
             <IntroCards />
             {/* </AnimateSharedLayout> */}
         </motion.div>

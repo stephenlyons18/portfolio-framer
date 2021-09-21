@@ -12,11 +12,11 @@ const IntroCard: React.FC<props> = (props) => {
             className="introContainer"
             style={{ height: props.height }}
             variants={projectCardVarients}
-            initial="noHover"
-            whileHover="hover"
+            initial="noTap"
+            whileTap="tap"
             drag
-            dragConstraints={{ left: 10, right: 10, top: 10, bottom: 10 }}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+            // dragConstraints={{ left: 10, right: 10, top: 10, bottom: 10 }}
+            // dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
         >
             <img src={introPicture} alt="" className="introImg" />
             <p>Hi! My name is Stephen Lyons.</p>
@@ -26,11 +26,12 @@ const IntroCard: React.FC<props> = (props) => {
 };
 
 const projectCardVarients = {
-    hover: {
+    tap: {
         opacity: 1,
         scale: 1.15,
+        innerWidth: '100%',
     },
-    noHover: {
+    noTap: {
         opacity: 0.9,
     },
 };
