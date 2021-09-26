@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useLocation,
+} from 'react-router-dom';
 
 import Home from './Pages/Home/Home';
 import Projects from './Pages/Projects/Projects';
@@ -10,24 +15,23 @@ import { useState } from 'react';
 
 function App() {
     const [ContactToggle, setContactToggle] = useState(false);
+    const location = useLocation();
     return (
         <div>
-            <Router>
-                <NavBar />
-                <AnimatePresence>
-                    <Switch>
-                        <Route exact path="/">
-                            <Home />
-                        </Route>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/projects">
-                            <Projects />
-                        </Route>
-                    </Switch>
-                </AnimatePresence>
-            </Router>
+            <NavBar />
+            <AnimatePresence>
+                <Switch location={location} key={location.key}>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/projects">
+                        <Projects />
+                    </Route>
+                </Switch>
+            </AnimatePresence>
         </div>
     );
 }

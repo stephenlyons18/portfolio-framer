@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import WelcomeNameform from '../../components/WelcomeNameform/WelcomeNameform';
 import Card from '@mui/material/Card';
 import IntroCard from '../../components/IntroCard/IntroCard';
 import './HomeStyles.scss';
 import Typewriter from 'typewriter-effect';
 import { AnimateSharedLayout } from 'framer-motion';
-import IntroCards from '../../components/IntroCard/IntroCards';
+// import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
 function randomHeight() {
@@ -13,7 +13,13 @@ function randomHeight() {
 }
 export default function Home() {
     return (
-        <motion.div className="containerStyle">
+        <motion.div
+            className="containerStyle"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+        >
             <motion.div
                 variants={introText}
                 initial="hidden"
@@ -60,7 +66,7 @@ export default function Home() {
                 <IntroCard height={randomHeight()} />
                 <IntroCard height={randomHeight()} />
             </motion.div>
-            <IntroCards />
+            {/* <IntroCards /> */}
             {/* </AnimateSharedLayout> */}
         </motion.div>
     );
@@ -85,4 +91,13 @@ const squareStyle = {
     width: 'max-content',
     whiteSpace: 'pre-wrap',
     flexShrink: 0,
+};
+const containerVariants = {
+    hidden: { opacity: 0, y: '100vh' },
+    visible: {
+        opacity: 1,
+        y: '0vh',
+        transition: { duration: 1 },
+    },
+    exit: { x: '-100vw', transition: { ease: 'easeInOut' } },
 };

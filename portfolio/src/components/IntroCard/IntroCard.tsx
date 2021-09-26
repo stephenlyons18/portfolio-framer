@@ -29,7 +29,9 @@ const projectCardVarients = {
     tap: {
         opacity: 1,
         scale: 1.15,
-        innerWidth: '100%',
+        width: '80vw',
+        x: 0,
+        y: 0,
     },
     noTap: {
         opacity: 0.9,

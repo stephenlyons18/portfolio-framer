@@ -16,17 +16,17 @@ function randomHeight() {
  * Try removing AnimateSharedLayout to see how that affects the animation.
  */
 
-export default function IntroCards() {
-    return (
-        <AnimateSharedLayout>
-            <motion.ul layout initial={{ borderRadius: 25 }}>
-                {items.map((item) => (
-                    <Item key={item} />
-                ))}
-            </motion.ul>
-        </AnimateSharedLayout>
-    );
-}
+// export default function IntroCards() {
+//     return (
+//         <AnimateSharedLayout>
+//             <motion.ul layout initial={{ borderRadius: 25 }}>
+//                 {items.map((item) => (
+//                     <Item key={item} />
+//                 ))}
+//             </motion.ul>
+//         </AnimateSharedLayout>
+//     );
+// }
 
 function Item() {
     const [isOpen, setIsOpen] = useState(false);
