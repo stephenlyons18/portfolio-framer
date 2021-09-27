@@ -1,21 +1,23 @@
 .welcomeText {
     font-size: 5vw;
-    display: flex;
+
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-weight: bold;
-    padding-bottom: 20vh;
+    padding: 5vh 2vw;
     flex-direction: column;
+    color: #5aff15;
+    width: 100%;
 }
 .helloText {
-    padding-top: 20vh;
+    padding-top: 5vh;
 }
 
 .containerStyle {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(to right, #a5fecb, #20bdff, #5433ff)
+    background: #000
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
     min-height: 100vh;
     width: 100%;
@@ -31,13 +33,15 @@
     background: darkgrey;
     padding-top: 2%;
     border-radius: 25px;
+    opacity: 0.75;
 }
 .iAmClass {
     font-size: 5vw;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
     font-weight: bold;
     padding-bottom: 20vh;
-    flex-direction: row;
+    flex-direction: column;
+    color: #5aff15;
+    padding: 5vh 2vw;
 }

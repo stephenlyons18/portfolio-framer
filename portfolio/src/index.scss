@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+body,
+html {
+    font-family: 'Source Code Pro';
+    background: #000;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Source Sans Pro';
+}
+h1 {
+    font-size: 6vw;
+}
+h2 {
+    font-size: 4vw;
+}
+h3 {
+    font-size: 2vw;
+}
+h4 {
+    font-size: 1vw;
+}
+input:focus {
+    outline: none;
+}
+input {
+    font-size: 5vw;
+    align-items: center;
+}
+::placeholder {
+    background-color: transparent;
+    color: darkslategray;
+}

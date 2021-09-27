@@ -19,7 +19,7 @@ function App() {
     return (
         <div>
             <NavBar />
-            <AnimatePresence>
+            <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.key}>
                     <Route exact path="/">
                         <Home />

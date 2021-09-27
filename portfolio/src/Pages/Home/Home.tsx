@@ -5,6 +5,7 @@ import IntroCard from '../../components/IntroCard/IntroCard';
 import './HomeStyles.scss';
 import Typewriter from 'typewriter-effect';
 import { AnimateSharedLayout } from 'framer-motion';
+import { CaretRight } from 'phosphor-react';
 // import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
@@ -29,38 +30,43 @@ export default function Home() {
                 animate="show"
             >
                 <motion.div className="welcomeText">
-                    <div className="helloText">
+                    <motion.div className="helloText">
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter
-                                    .typeString('Hello! My name is Stephen')
-                                    .callFunction(() => {
-                                        console.log('All strings were deleted');
-                                    })
+                                    .pauseFor(500)
+                                    .typeString('hello! my name is stephen')
                                     .start();
                             }}
                         />
-                    </div>
-                    <div className="iAmClass">
-                        <p style={{ paddingRight: '2vw' }}>I am a </p>
+                    </motion.div>
+                    <motion.div
+                        className="iAmClass"
+                        initial={{ x: '-100vw' }}
+                        animate={{ x: '0vw' }}
+                        transition={{ ease: 'easeInOut', delay: 4.5 }}
+                    >
                         <Typewriter
-                            options={{
-                                strings: [
-                                    '  Student',
-                                    '  Web Developer',
-                                    '  Freelancer',
-                                ],
-                                autoStart: true,
-                                cursor: 'l',
-                                loop: true,
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .pauseFor(4500)
+                                    .typeString('i am a student')
+                                    .pauseFor(1000)
+                                    .deleteChars(7)
+                                    .typeString('web weveloper')
+                                    .pauseFor(1000)
+                                    .deleteChars(13)
+                                    .typeString('Freelancer')
+                                    .start();
                             }}
+                            options={{ loop: true }}
                         />
-                    </div>
+                    </motion.div>
                 </motion.div>
                 {/* <Card>Hello World</Card> */}
             </motion.div>
             {/* <AnimateSharedLayout> */}
-            <motion.div className="introCards">
+            <motion.div className="introCards" drag>
                 <IntroCard height={randomHeight()} />
                 <IntroCard height={randomHeight()} />
                 <IntroCard height={randomHeight()} />

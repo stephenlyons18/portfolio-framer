@@ -9,17 +9,22 @@
     padding: 10px;
     margin: 20px;
     border-radius: 5px;
-    background: #33658a;
+    background: none;
+    border: 1px solid #5aff15;
     text-decoration: none;
+    transition: all 0.4s ease;
+    &:hover {
+        background-color: #5aff15;
+    }
 }
 .noDecor {
     text-decoration: none;
     text-transform: capitalize;
-    color: #000;
-    transition: all 0.4s ease;
+    color: white;
+    transition: all 0.2s ease;
 
     &:hover {
-        color: white;
+        color: black;
     }
 }
 .contactButtonStyle {
