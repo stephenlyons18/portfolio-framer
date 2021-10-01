@@ -2,11 +2,12 @@ import React from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import { motion } from 'framer-motion';
 import image1 from '../../assets/images/grad-photo.jpg';
+import './ProjectStyles.css';
 
 const Projects = () => {
     return (
         <motion.div
-            className="containerStyle"
+            className="containerStyleAbout"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

@@ -56,7 +56,7 @@ export default function Home() {
                                     .typeString('web weveloper')
                                     .pauseFor(1000)
                                     .deleteChars(13)
-                                    .typeString('Freelancer')
+                                    .typeString('freelancer')
                                     .start();
                             }}
                             options={{ loop: true }}
