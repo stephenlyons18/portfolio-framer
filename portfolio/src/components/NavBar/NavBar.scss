@@ -1,13 +1,14 @@
 .NavContainerStyle {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     overflow: hidden;
     align-items: center;
-    background: #2f4858;
+    background: #000;
+    border: 1px solid whiTe;
 }
 .NavLinkStyle {
     padding: 10px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 5px;
     background: none;
     border: 1px solid #5aff15;
@@ -28,7 +29,12 @@
     }
 }
 .contactButtonStyle {
-    background-color: #4da167;
     border-radius: 5px;
     height: 55px;
+    transition: all 0.2s ease;
+    &:hover {
+        fill: black;
+        color: black;
+        background-color: #5aff15;
+    }
 }

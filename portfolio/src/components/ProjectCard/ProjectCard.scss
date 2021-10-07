@@ -8,4 +8,8 @@
     height: auto;
     padding: 3vw;
     margin: 3vw;
+    flex: 1 0 21%;
+    &:focus {
+        z-index: 1;
+    }
 }

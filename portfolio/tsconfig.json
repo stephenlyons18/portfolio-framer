@@ -6,7 +6,7 @@
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "strict": true,
+        "strict": false,
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
         "module": "esnext",
@@ -15,7 +15,8 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        "typeRoots": ["./node_modules/@types", "./typings"]
+        "typeRoots": ["./node_modules/@types", "./typings"],
+        "noImplicitAny": false
     },
     "include": ["src"]
 }

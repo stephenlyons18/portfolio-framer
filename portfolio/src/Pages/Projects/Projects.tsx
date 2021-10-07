@@ -1,8 +1,10 @@
 import React from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { motion, AnimateSharedLayout } from 'framer-motion';
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import image1 from '../../assets/images/grad-photo.jpg';
 import './ProjectStyles.scss';
+
+import { items } from './items';
 
 const Projects = () => {
     return (
@@ -16,46 +18,24 @@ const Projects = () => {
             <motion.div
                 className="projectsImageContainer"
                 whileHover={{ scale: 1.4 }}
-            >
-                <motion.img src={image1}></motion.img>
-            </motion.div>
+            ></motion.div>
             <motion.div className="projectsContainer">
                 <AnimateSharedLayout type="crossfade">
-                    <ProjectCard
-                        imgPath={image1}
-                        projectTitle="Hello World"
-                        projectText={lorem}
-                    >
-                        <p>Hello world</p>
-                    </ProjectCard>
-                    <ProjectCard
-                        imgPath={image1}
-                        projectTitle="Hello World"
-                        projectText={lorem}
-                    >
-                        <p>Hello world</p>
-                    </ProjectCard>
-                    <ProjectCard
-                        imgPath={image1}
-                        projectTitle="Hello World"
-                        projectText={lorem}
-                    >
-                        <p>Hello world</p>
-                    </ProjectCard>
-                    <ProjectCard
-                        imgPath={image1}
-                        projectTitle="Hello World"
-                        projectText={lorem}
-                    >
-                        <p>Hello world</p>
-                    </ProjectCard>
-                    <ProjectCard
-                        imgPath={image1}
-                        projectTitle="Hello World"
-                        projectText={lorem}
-                    >
-                        <p>Hello world</p>
-                    </ProjectCard>
+                    {items.map((item) => {
+                        return (
+                            <motion.div layout>
+                                <ProjectCard
+                                    imgPath={item.imgSrc}
+                                    projectTitle={item.projectTitle}
+                                    projectText={item.description}
+                                    key={item.projectID}
+                                />
+                            </motion.div>
+                        );
+                    })}
+                    {/* <AnimatePresence>
+                        {selectedId && <motion.img layoutId={selectedId} />}
+                    </AnimatePresence> */}
                 </AnimateSharedLayout>
             </motion.div>
         </motion.div>
@@ -69,7 +49,7 @@ const containerVariants = {
         x: '0vw',
         transition: { duration: 1 },
     },
-    exit: { x: '-100vw', transition: { ease: 'easeInOut' } },
+    exit: { y: '100vh', transition: { ease: 'easeInOut' } },
 };
 
 export default Projects;

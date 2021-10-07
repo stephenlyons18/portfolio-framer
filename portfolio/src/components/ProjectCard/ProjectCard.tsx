@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProjectCard.scss';
+import TestImage from '../../assets/images/grad-photo.jpg';
 
 interface Props {
-    children: JSX.Element[] | JSX.Element;
     imgPath: string;
     altText?: string;
     projectText: string;
@@ -11,13 +11,13 @@ interface Props {
 }
 
 const ProjectCard: React.FC<Props> = ({
-    children,
     imgPath,
     altText,
     projectText,
     projectTitle,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
+    // const myImage: File = require(imgPath);
     return (
         <motion.div
             className="projectContainerStyle"
@@ -33,7 +33,7 @@ const ProjectCard: React.FC<Props> = ({
 
             <h3>{projectTitle}</h3>
 
-            {isOpen ? <p>{projectText}</p> : null}
+            {isOpen ? <motion.p>{projectText}</motion.p> : null}
         </motion.div>
     );
 };
@@ -43,8 +43,7 @@ const projectCardVariants = {
         opacity: 1,
         width: '100%',
         height: '100%',
-        margin: '0%',
-        y: '-1000px',
+
         transition: { duration: 0.5, ease: 'easeInOut' },
     },
     closed: {
