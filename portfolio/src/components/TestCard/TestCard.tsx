@@ -1,12 +1,12 @@
-import React, useState from 'react'
-import { AnimateSharedLayout, motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const TestCard = () => {
-    const [selectedId, setSelectedId] = useState(null)
+    // const [selectedId, setSelectedId] = useState(null)
+    // var items: React.FC = [];
     return (
         <motion.div>
-            <AnimateSharedLayout type="crossfade">
+            {/* <AnimateSharedLayout type="crossfade">
             {items.map( item: React.FC => (
                 <motion.div layoutId={item.id} onClick={() => setSelectedId(item.id)}>
                 <motion.h5>{item.subtitle}</motion.h5>
@@ -23,9 +23,9 @@ const TestCard = () => {
                 </motion.div>
                 )}
             </AnimatePresence>
-            </AnimateSharedLayout>
+            </AnimateSharedLayout> */}
         </motion.div>
-    )
-}
+    );
+};
 
-export default TestCard
+export default TestCard;

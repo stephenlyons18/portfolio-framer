@@ -53,7 +53,7 @@ export default function Home() {
                                     .typeString('i am a student')
                                     .pauseFor(1000)
                                     .deleteChars(7)
-                                    .typeString('web weveloper')
+                                    .typeString('web developer')
                                     .pauseFor(1000)
                                     .deleteChars(13)
                                     .typeString('freelancer')

@@ -11,7 +11,7 @@ const IntroCard: React.FC<props> = (props) => {
         <motion.div
             className="introContainer"
             style={{ height: props.height }}
-            variants={projectCardVarients}
+            variants={introCardVariants}
             initial="noTap"
             whileTap="tap"
             drag
@@ -25,7 +25,7 @@ const IntroCard: React.FC<props> = (props) => {
     );
 };
 
-const projectCardVarients = {
+const introCardVariants = {
     tap: {
         opacity: 1,
         scale: 1.15,

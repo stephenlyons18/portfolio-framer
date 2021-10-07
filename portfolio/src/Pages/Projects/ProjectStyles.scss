@@ -1,0 +1,22 @@
+.containerStyleAbout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: blue
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    min-height: 100vh;
+    width: 100%;
+}
+.projectsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1a2932;
+    max-width: 90vw;
+    min-height: 80vh;
+    margin: 5vw;
+    border-radius: 2vw;
+}
+.projectsImageContainer {
+}
