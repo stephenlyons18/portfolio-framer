@@ -1,5 +1,5 @@
 .welcomeText {
-    font-size: 5vw;
+    font-size: 4vw;
 
     align-items: center;
     justify-content: flex-start;
@@ -10,15 +10,25 @@
     width: 100%;
 }
 .helloText {
-    padding-top: 5vh;
+    padding-top: 4vh;
 }
 
 .containerStyle {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    background: #000
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #000000,
+        #434343
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #000000,
+        #434343
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     min-height: 100vh;
     width: 100%;
 }
@@ -36,12 +46,10 @@
     opacity: 0.75;
 }
 .iAmClass {
-    font-size: 5vw;
+    font-size: 3.5vw;
     display: flex;
     align-items: flex-start;
     font-weight: bold;
-    padding-bottom: 20vh;
     flex-direction: column;
     color: #5aff15;
-    padding: 5vh 2vw;
 }

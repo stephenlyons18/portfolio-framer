@@ -50,13 +50,15 @@ export default function Home() {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(4500)
-                                    .typeString('i am a student')
+                                    .typeString('i am a student()')
                                     .pauseFor(1000)
-                                    .deleteChars(7)
-                                    .typeString('web developer')
+                                    .deleteChars(9)
+                                    .typeString('web developer </>')
                                     .pauseFor(1000)
-                                    .deleteChars(13)
-                                    .typeString('freelancer')
+                                    .deleteChars(17)
+                                    .typeString('freelancer :)')
+                                    .pauseFor(1000)
+                                    .deleteChars(20)
                                     .start();
                             }}
                             options={{ loop: true }}
