@@ -1,35 +1,63 @@
 import React from 'react';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 export const Skills = () => {
-    return <div></div>;
+    return (
+        <motion.div>
+            <AnimateSharedLayout>
+                {skills.map((skill) => {
+                    return (
+                        <motion.div
+                            className="skillsBar"
+                            initial={{ width: '0px' }}
+                            animate={{ width: skill.level }}
+                        >
+                            {skill.skill}
+                        </motion.div>
+                    );
+                })}
+                {/* <AnimatePresence>
+                        {selectedId && <motion.img layoutId={selectedId} />}
+                    </AnimatePresence> */}
+            </AnimateSharedLayout>
+        </motion.div>
+    );
 };
-const skils = [
+const skills = [
     {
         skill: 'JavaScript',
-        level: 90,
+        level: '90px',
     },
     {
         skill: 'Python',
-        level: 75,
+        level: '75px',
     },
     {
         skill: 'HTML',
-        level: 85,
+        level: '85px',
     },
     {
         skill: 'Linux',
-        level: 70,
+        level: '70px',
     },
     {
         skill: 'Java',
-        level: 65,
+        level: '65px',
     },
     {
         skill: 'TypeScript',
-        level: 85,
+        level: '85px',
     },
     {
         skill: 'React.js',
-        level: 80,
+        level: '80px',
     },
 ];
+// const skillsVariants = {
+//     closed: {
+//         width: 0,
+//     },
+//     open: {
+//         width: item.skill,
+//     },
+// };

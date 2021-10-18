@@ -14,20 +14,18 @@ const NavBar = () => {
         <nav>
             <div className="NavContainerStyle">
                 <div style={{ color: 'white', marginLeft: '40px' }}>
-                    <h3 style={{ marginBottom: '10px' }}>Stephen Lyons</h3>
-                    <h4>Software Engineer</h4>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <Link to="/" className="noDecor">
-                        {' '}
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                             className="NavLinkStyle"
                         >
-                            HOME
-                        </motion.div>{' '}
+                            <h3 style={{ margin: '0px' }}>Stephen Lyons</h3>
+                            <h5 style={{ margin: '0px' }}>Software Engineer</h5>
+                        </motion.div>
                     </Link>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <Link to="/projects" className="noDecor">
                         {' '}
                         <motion.div
