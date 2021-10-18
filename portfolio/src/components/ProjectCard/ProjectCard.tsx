@@ -41,8 +41,9 @@ const ProjectCard: React.FC<Props> = ({
 const projectCardVariants = {
     open: {
         opacity: 1,
-        width: '100%',
+        width: '85vw',
         height: '100%',
+        top: '0px',
 
         transition: { duration: 0.5, ease: 'easeInOut' },
     },
