@@ -1,6 +1,7 @@
 .skillsContainer {
     display: flex;
     flex-direction: column;
+    padding: 3vw;
 }
 .skillsBar {
     background: #b92b27; /* fallback for old browsers */
@@ -14,5 +15,16 @@
         #1565c0,
         #b92b27
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 15px;
+    height: 20px;
+    margin: 1%;
+    border-radius: 15px;
+}
+.skillWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.skillText {
+    color: white;
 }

@@ -16,6 +16,7 @@
     transition: all 0.4s ease;
     &:hover {
         background-color: #5aff15;
+        color: black;
     }
 }
 .noDecor {
@@ -23,10 +24,6 @@
     text-transform: capitalize;
     color: white;
     transition: all 0.2s ease;
-
-    &:hover {
-        color: black;
-    }
 }
 .contactButtonStyle {
     border-radius: 5px;
