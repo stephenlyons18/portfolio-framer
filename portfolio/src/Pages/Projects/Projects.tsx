@@ -15,10 +15,6 @@ const Projects = () => {
             animate="visible"
             exit="exit"
         >
-            <motion.div
-                className="projectsImageContainer"
-                whileHover={{ scale: 1.4 }}
-            ></motion.div>
             <motion.div className="projectsContainer">
                 <AnimateSharedLayout type="crossfade">
                     {items.map((item) => {

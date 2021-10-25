@@ -6,20 +6,20 @@ export const Skills = () => {
         <motion.div
             className="skillsContainer"
             variants={containerVariants}
-            initial="hidden"
+            initial="closed"
             animate="show"
+            exit="exit"
         >
             {skills.map((skill) => {
                 return (
                     <motion.div key={skill.skill}>
                         <motion.h3 className="skillText">
-                            {skill.skill}
+                            {skill.skill} : {skill.level}%
                         </motion.h3>
+
                         <motion.div
                             className="skillsBar"
                             variants={skillVariants}
-                            initial="closed"
-                            animate="full"
                             custom={skill}
                         />
                     </motion.div>
@@ -31,49 +31,43 @@ export const Skills = () => {
 const skills = [
     {
         skill: 'JavaScript',
-        level: '90%',
+        level: '90',
     },
     {
         skill: 'Python',
-        level: '75%',
+        level: '75',
     },
     {
         skill: 'HTML5',
-        level: '85%',
+        level: '85',
     },
     {
         skill: 'Linux / Kali Linux',
-        level: '70%',
+        level: '70',
     },
     {
         skill: 'Java',
-        level: '65%',
+        level: '65',
     },
     {
         skill: 'TypeScript',
-        level: '85%',
+        level: '85',
     },
     {
         skill: 'React.js',
-        level: '80%',
+        level: '80',
     },
 ];
 const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            delayChildren: 5,
-            staggerChildren: 1,
-        },
-    },
+    closed: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    exit: { opacity: 0 },
 };
 const skillVariants = {
     closed: { width: '0px' },
-    full: (skill) => ({
-        width: skill.level,
+    show: (skill) => ({
+        width: (skill.level - 10).toString() + '%',
         transition: {
-            duration: 5,
             type: 'spring',
             stiffness: 566,
             damping: 32,
