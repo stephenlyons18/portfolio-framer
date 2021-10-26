@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import { Chat } from 'phosphor-react';
-import ChatBox from '../../assets/images/chat-bubble.svg';
+
 import ContactOverlay from '../ContactOverlay/ContactOverlay';
-import { setConstantValue } from 'typescript';
-import { padding } from '@mui/system';
 
 const NavBar = () => {
     const [open, setOpen] = useState('closed');
@@ -50,7 +48,7 @@ const NavBar = () => {
                     whileTap={{ scale: 0.9 }}
                     className="contactButtonStyle"
                 >
-                    <Chat size={40} style={{ color: '#5aff15' }} />
+                    <Chat size={40} />
                 </motion.div>
             </div>
         </nav>

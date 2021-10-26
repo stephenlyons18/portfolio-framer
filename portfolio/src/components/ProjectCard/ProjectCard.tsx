@@ -8,6 +8,7 @@ interface Props {
     altText?: string;
     projectText: string;
     projectTitle: string;
+    projectUrl: string;
 }
 
 const ProjectCard: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const ProjectCard: React.FC<Props> = ({
     altText,
     projectText,
     projectTitle,
+    projectUrl,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     // const myImage: File = require(imgPath);
@@ -29,7 +31,14 @@ const ProjectCard: React.FC<Props> = ({
             dragConstraints={{ left: 10, right: 10, top: 10, bottom: 10 }}
             dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
         >
-            <motion.img src={imgPath} alt={altText} className="projectImage" />
+            <a href={projectUrl}>
+                <motion.img
+                    src={imgPath}
+                    alt={altText}
+                    className="projectImage"
+                    whileHover={{ scale: 1.1 }}
+                />
+            </a>
 
             <h3>{projectTitle}</h3>
 
@@ -41,15 +50,15 @@ const ProjectCard: React.FC<Props> = ({
 const projectCardVariants = {
     open: {
         opacity: 1,
-        width: '85vw',
+        width: '100%',
         height: '100%',
         top: '0px',
 
-        transition: { duration: 0.5, ease: 'easeInOut' },
+        transition: { duration: 0.5, ease: 'easeOut' },
     },
     closed: {
         opacity: 0.6,
-        width: '15%',
+        width: '70%',
         height: '10%',
 
         transition: { duration: 0.5, ease: 'easeInOut' },

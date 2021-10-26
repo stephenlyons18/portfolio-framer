@@ -1,0 +1,22 @@
+.welcomeText {
+    font-size: 4vw;
+
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+    padding: 5vh 2vw;
+    flex-direction: column;
+    color: #5aff15;
+    width: 100%;
+}
+.helloText {
+    padding-top: 4vh;
+}
+.iAmClass {
+    font-size: 3.5vw;
+    display: flex;
+    align-items: flex-start;
+    font-weight: bold;
+    flex-direction: column;
+    color: #5aff15;
+}

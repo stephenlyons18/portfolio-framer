@@ -1,14 +1,15 @@
 .projectImage {
-    height: 10vh;
-    width: 10vw;
+    width: 100%;
     background: #86bbd8;
 }
 .projectContainerStyle {
     background-color: #27475e;
+
     height: auto;
     padding: 3vw;
-    margin: 3vw;
+    margin: 1vw;
     flex: 1 0 21%;
+    border-radius: 10px;
     &:focus {
         z-index: 1;
     }

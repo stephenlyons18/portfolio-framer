@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import image1 from '../../assets/images/grad-photo.jpg';
@@ -25,6 +25,7 @@ const Projects = () => {
                                     projectTitle={item.projectTitle}
                                     projectText={item.description}
                                     key={item.projectID}
+                                    projectUrl={item.url}
                                 />
                             </motion.div>
                         );

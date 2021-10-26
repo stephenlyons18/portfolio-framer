@@ -29,9 +29,11 @@
     border-radius: 5px;
     height: 55px;
     transition: all 0.2s ease;
+    fill: #5aff15;
+    color: #5aff15;
     &:hover {
         fill: black;
         color: black;
-        background-color: #5aff15;
+        background-color: white;
     }
 }
