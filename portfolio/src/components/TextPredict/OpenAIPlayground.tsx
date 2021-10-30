@@ -1,12 +1,15 @@
 import { color } from '@mui/system';
 import React, { useState } from 'react';
 import './OpenAIPlayground.scss';
+import { CaretRight } from 'phosphor-react';
+import { motion } from 'framer-motion';
 
 const OpenAIPlayground = () => {
-    const [text, setText] = useState('The quick brown fox jumped...');
+    const [text, setText] = useState('The quick brown fox jumped');
     const [prediction, setPrediction] = useState('');
     const [code, setCode] = useState('Create a for loop');
     const [codePrediction, setCodePrediction] = useState('');
+    const [temperature, setTemperature] = useState(0);
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -16,7 +19,7 @@ const OpenAIPlayground = () => {
                 engine: 'davinci',
                 prompt: text,
                 maxTokens: 100,
-                temperature: 0.9,
+                temperature: 0,
                 topP: 1,
                 presencePenalty: 0,
                 frequencyPenalty: 0,
@@ -36,7 +39,7 @@ const OpenAIPlayground = () => {
                 engine: 'cushman-codex',
                 prompt: code,
                 maxTokens: 2000,
-                temperature: 0.9,
+                temperature: temperature,
                 topP: 1,
                 presencePenalty: 0,
                 frequencyPenalty: 0,
@@ -58,36 +61,57 @@ const OpenAIPlayground = () => {
             <form onSubmit={handleSubmit} className="openAIform">
                 <label>
                     <p style={{ fontSize: '1.4em' }}>Powered by OpenAI:</p>
-                    <input
-                        className="openAIinput"
-                        type="text"
-                        value={text}
-                        onChange={(e) => {
-                            setText(e.target.value);
-                            setPrediction('');
-                        }}
-                    />
+                    <div className="inputContainer">
+                        <CaretRight size={48} className="blink" />
+                        <input
+                            className="openAIinput"
+                            type="text"
+                            value={text}
+                            onChange={(e) => {
+                                setText(e.target.value);
+                                setPrediction('');
+                            }}
+                        />
+                    </div>
                 </label>
                 <input type="submit" value="Submit" className="openAISubmit" />
             </form>
+            {/* create a slider input to adjust the temperature */}
+            <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.1"
+                value={temperature}
+                onChange={(e) => {
+                    setTemperature(Number(e.target.value));
+                }}
+            />
+            <p>Temperature: {temperature}</p>
             <div className="openAIresponse">
                 <p>{text + ' ... ' + prediction}</p>
             </div>
             <form onSubmit={handleCodeSubmit} className="openAIform">
                 <label>
-                    <p style={{ fontSize: '1.4em' }}>Powered by OpenAI:</p>
-                    <input
-                        className="openAIinput"
-                        type="text"
-                        value={code}
-                        onChange={(e) => {
-                            setCode(e.target.value);
-                            setCodePrediction('');
-                        }}
-                    />
+                    <p style={{ fontSize: '1.4em' }}>
+                        Enter a phrase and watch OpenAI complete your thought:
+                    </p>
+                    <div className="inputContainer">
+                        <CaretRight size={48} className="blink" />
+                        <input
+                            className="openAIinput"
+                            type="text"
+                            value={code}
+                            onChange={(e) => {
+                                setCode(e.target.value);
+                                setCodePrediction('');
+                            }}
+                        />
+                    </div>
                 </label>
                 <input type="submit" value="Submit" className="openAISubmit" />
             </form>
+
             <div>
                 <p>{code + ' ... ' + codePrediction}</p>
             </div>
