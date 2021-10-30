@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import { Chat } from 'phosphor-react';
 
-import ContactOverlay from '../ContactOverlay/ContactOverlay';
-
 const NavBar = () => {
     const [open, setOpen] = useState('closed');
     return (

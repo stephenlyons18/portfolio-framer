@@ -6,15 +6,13 @@ import './AboutStyles.scss';
 const About = () => {
     return (
         <motion.div className="aboutContainer">
-            <motion.div className="skillsContainer">
-                <Skills />
-                <motion.img
-                    className="skillsImg"
-                    src={stephen}
-                    whileHover={{ scale: '1.1' }}
-                    transition={{ duration: 0.5 }}
-                ></motion.img>
-            </motion.div>
+            <Skills />
+            <motion.img
+                className="skillsImg"
+                src={stephen}
+                whileHover={{ scale: '1.1' }}
+                transition={{ duration: 0.5 }}
+            ></motion.img>
         </motion.div>
     );
 };

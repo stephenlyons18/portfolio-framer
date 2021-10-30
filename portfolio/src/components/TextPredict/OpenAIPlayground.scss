@@ -11,9 +11,10 @@
     background: transparent;
     border: 1px solid #fff;
     border-radius: 5px;
-    color: #fff;
+    color: #5aff15;
     font-size: 1.2em;
     padding: 5px;
+    width: auto;
 }
 .openAISubmit {
     background: transparent;
@@ -30,5 +31,18 @@
         background: #5aff15;
         color: #000;
         border-color: #000;
+    }
+}
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.blink {
+    animation: blinker 0.8s step-start infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
     }
 }

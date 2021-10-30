@@ -19,11 +19,12 @@ const WelcomeText = () => {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(500)
-                                    .typeString('hello! my name is stephen')
-                                    .start();
+                                    .start()
+                                    .typeString('hello! my name is stephen');
                             }}
                         />
                     </motion.div>
+
                     <motion.div
                         className="iAmClass"
                         initial={{ x: '-100vw' }}

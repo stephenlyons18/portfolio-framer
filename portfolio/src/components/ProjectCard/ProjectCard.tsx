@@ -22,14 +22,13 @@ const ProjectCard: React.FC<Props> = ({
     // const myImage: File = require(imgPath);
     return (
         <motion.div
-            className="projectContainerStyle"
+            //change the className when the card is closed
+            className={`project-card ${isOpen ? 'open' : ''}`}
+            onClick={() => setIsOpen(!isOpen)}
             variants={projectCardVariants}
             animate={isOpen ? 'open' : 'closed'}
-            onClick={() => setIsOpen((isOpen) => !isOpen)}
-            drag
+            initial="closed"
             whileHover="hover"
-            dragConstraints={{ left: 10, right: 10, top: 10, bottom: 10 }}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
         >
             <a href={projectUrl}>
                 <motion.img
@@ -50,16 +49,17 @@ const ProjectCard: React.FC<Props> = ({
 const projectCardVariants = {
     open: {
         opacity: 1,
-        width: '100%',
-        height: '100%',
-        top: '0px',
-
+        width: '80%',
         transition: { duration: 0.5, ease: 'easeOut' },
     },
     closed: {
         opacity: 0.6,
-        width: '70%',
-        height: '10%',
+        width: '10%',
+        height: 'auto',
+        backgroundColor: '#27475e',
+        padding: '5%',
+        margin: '5%',
+        borderRadius: '15px',
 
         transition: { duration: 0.5, ease: 'easeInOut' },
     },
