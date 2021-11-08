@@ -4,7 +4,7 @@ import IntroCard from '../../components/IntroCard/IntroCard';
 import './HomeStyles.scss';
 import WelcomeText from '../../components/WelcomeText/WelcomeText';
 import OpenAIPlayground from '../../components/TextPredict/OpenAIPlayground';
-
+import WelcomePitcure from '../../assets/images/grad-photo.jpg';
 // import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
@@ -20,8 +20,18 @@ export default function Home() {
             animate="visible"
             exit="exit"
         >
-            <WelcomeText />
+            <div className="welcomeContainer">
+                <WelcomeText />
+
+                <img
+                    src={WelcomePitcure}
+                    className="welcomePicture"
+                    alt="welcome"
+                />
+            </div>
             <OpenAIPlayground />
+
+            {/*  */}
 
             <motion.div className="introCards" drag>
                 <IntroCard height={randomHeight()} />

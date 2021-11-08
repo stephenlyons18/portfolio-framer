@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion, LayoutGroup } from 'framer-motion';
 import image1 from '../../assets/images/grad-photo.jpg';
 import './ProjectStyles.scss';
 
@@ -16,7 +16,7 @@ const Projects = () => {
             exit="exit"
         >
             <motion.div className="projectsContainer">
-                <AnimateSharedLayout type="crossfade">
+                <LayoutGroup>
                     {items.map((item) => {
                         return (
                             <motion.div layout>
@@ -33,7 +33,7 @@ const Projects = () => {
                     {/* <AnimatePresence>
                         {selectedId && <motion.img layoutId={selectedId} />}
                     </AnimatePresence> */}
-                </AnimateSharedLayout>
+                </LayoutGroup>
             </motion.div>
         </motion.div>
     );
@@ -50,6 +50,3 @@ const containerVariants = {
 };
 
 export default Projects;
-
-const lorem =
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus adipisci explicabo ratione soluta eveniet eos nostrum harum, dolores reprehenderit earum, optio voluptatibus repellendus dignissimos assumenda, incidunt expedita maiores rem ducimus.';

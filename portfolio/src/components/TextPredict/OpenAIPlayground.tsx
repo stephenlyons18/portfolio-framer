@@ -1,8 +1,6 @@
-import { color } from '@mui/system';
 import React, { useState } from 'react';
 import './OpenAIPlayground.scss';
 import { CaretRight } from 'phosphor-react';
-import { motion } from 'framer-motion';
 
 const OpenAIPlayground = () => {
     const [text, setText] = useState('The quick brown fox jumped');
@@ -59,7 +57,7 @@ const OpenAIPlayground = () => {
     return (
         <div className="openAIform">
             <form onSubmit={handleSubmit} className="openAIform">
-                <label>
+                <label style={{ width: '100%' }}>
                     <p style={{ fontSize: '1.4em' }}>Powered by OpenAI:</p>
                     <div className="inputContainer">
                         <CaretRight size={48} className="blink" />

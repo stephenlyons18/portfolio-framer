@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    useLocation,
-} from 'react-router-dom';
+import React from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 import Home from './Pages/Home/Home';
 import Projects from './Pages/Projects/Projects';

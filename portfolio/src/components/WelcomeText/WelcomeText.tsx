@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import './WelcomeText.scss';
 const WelcomeText = () => {
     return (
-        <div>
+        <div className="welcomeTextContainer">
             <motion.div
                 variants={introText}
                 initial="hidden"
