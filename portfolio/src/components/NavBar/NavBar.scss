@@ -25,6 +25,16 @@
     color: white;
     transition: all 0.2s ease;
 }
+
+@media (max-width: 500px) {
+    .NavContainerStyle {
+        font-size: 0.7rem;
+    }
+    .NavLinkStyle {
+        margin: 5px;
+        padding: 5px;
+    }
+}
 .contactButtonStyle {
     border-radius: 5px;
     height: 55px;

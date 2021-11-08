@@ -19,7 +19,7 @@ const Projects = () => {
                 <LayoutGroup>
                     {items.map((item) => {
                         return (
-                            <motion.div layout>
+                            <motion.div layout className="projectContainer">
                                 <ProjectCard
                                     imgPath={item.imgSrc}
                                     projectTitle={item.projectTitle}

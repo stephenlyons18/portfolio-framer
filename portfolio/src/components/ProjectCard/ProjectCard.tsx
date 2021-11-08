@@ -41,7 +41,15 @@ const ProjectCard: React.FC<Props> = ({
 
             <h3>{projectTitle}</h3>
 
-            {isOpen ? <motion.p>{projectText}</motion.p> : null}
+            {isOpen ? (
+                <motion.p
+                    variants={projectTextVariants}
+                    initial="closed"
+                    animate={isOpen ? 'open' : 'closed'}
+                >
+                    {projectText}
+                </motion.p>
+            ) : null}
         </motion.div>
     );
 };
@@ -54,7 +62,7 @@ const projectCardVariants = {
     },
     closed: {
         opacity: 0.6,
-        width: '10%',
+        width: '50%',
         height: 'auto',
         backgroundColor: '#27475e',
         padding: '5%',
@@ -66,6 +74,16 @@ const projectCardVariants = {
     hover: {
         opacity: 1,
         transition: { duration: 0.2, ease: 'easeInOut' },
+    },
+};
+const projectTextVariants = {
+    open: {
+        opacity: 1,
+        transition: { duration: 0.5, ease: 'easeOut' },
+    },
+    closed: {
+        opacity: 0,
+        transition: { duration: 0.5, ease: 'easeInOut' },
     },
 };
 export default ProjectCard;

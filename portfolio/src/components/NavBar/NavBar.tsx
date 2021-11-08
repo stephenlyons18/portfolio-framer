@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
-import { Chat } from 'phosphor-react';
+import { Chat, LinkedinLogo, GithubLogo } from 'phosphor-react';
 
 const NavBar = () => {
     const [open, setOpen] = useState('closed');
@@ -41,12 +41,25 @@ const NavBar = () => {
                         </motion.div>
                     </Link>
                 </div>
-                <motion.div
-                    style={{ marginRight: '40px' }}
-                    whileTap={{ scale: 0.9 }}
-                    className="contactButtonStyle"
-                >
-                    <Chat size={40} />
+                <motion.div>
+                    <Chat size={40} className="contactButtonStyle" />
+                    <a
+                        href="https://www.linkedin.com/in/stephen-lyons/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <LinkedinLogo
+                            size={40}
+                            className="contactButtonStyle"
+                        />
+                    </a>
+                    <a
+                        href="https://github.com/stephenlyons18"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <GithubLogo size={40} className="contactButtonStyle" />
+                    </a>
                 </motion.div>
             </div>
         </nav>

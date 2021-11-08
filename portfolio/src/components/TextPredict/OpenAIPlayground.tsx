@@ -57,7 +57,7 @@ const OpenAIPlayground = () => {
     return (
         <div className="openAIform">
             <form onSubmit={handleSubmit} className="openAIform">
-                <label style={{ width: '100%' }}>
+                <label style={{ width: '100%', paddingLeft: '5%' }}>
                     <p style={{ fontSize: '1.4em' }}>Powered by OpenAI:</p>
                     <div className="inputContainer">
                         <CaretRight size={48} className="blink" />
@@ -90,7 +90,7 @@ const OpenAIPlayground = () => {
                 <p>{text + ' ... ' + prediction}</p>
             </div>
             <form onSubmit={handleCodeSubmit} className="openAIform">
-                <label>
+                <label style={{ width: '100%', paddingLeft: '5%' }}>
                     <p style={{ fontSize: '1.4em' }}>
                         Enter a phrase and watch OpenAI complete your thought:
                     </p>

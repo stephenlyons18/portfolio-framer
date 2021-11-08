@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 
-import IntroCard from '../../components/IntroCard/IntroCard';
 import './HomeStyles.scss';
 import WelcomeText from '../../components/WelcomeText/WelcomeText';
 import OpenAIPlayground from '../../components/TextPredict/OpenAIPlayground';
@@ -29,16 +28,57 @@ export default function Home() {
                     alt="welcome"
                 />
             </div>
+            {/* create a button similar to the nav buttons that downloads my resume*/}
+            <motion.div
+                variants={reusmeVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="resumeButtonWrapper"
+            >
+                <a
+                    href={require('../../assets/files/stephen-lyons-resume.pdf')}
+                    download="stephen-lyons-resume"
+                >
+                    <button className="resumeButton">Download Resume</button>
+                </a>
+            </motion.div>
+            {/* Create a div about the college, load the CSULB logo from assets and display in a flex container with row format */}
+            <div className="csulbContainer">
+                <div className="csulbText">
+                    <h1 className="csulbHeader">I currently attend CSULB</h1>
+                    <p>
+                        {' '}
+                        My major is Computer Science and I am a Junior at
+                        California State University, Long Beach.
+                    </p>
+                    <p> I am interested in the following fields:</p>
+                    <ul>
+                        <li>
+                            {' '}
+                            Data Science, Machine Learning, and Artificial
+                            Intelligence
+                        </li>
+                        <li> Web Development, and Software Engineering</li>
+                        <li> Cyber Security, and Computer Networking</li>
+                    </ul>
+                </div>
+                <div className="logoWrapper">
+                    <img
+                        className="csulbLogo"
+                        src={require('../../assets/images/csulb-logo.png')}
+                        alt="csulb-logo"
+                    />
+                </div>
+            </div>
+
             <OpenAIPlayground />
 
-            {/*  */}
-
-            <motion.div className="introCards" drag>
+            {/* <motion.div className="introCards" drag>
                 <IntroCard height={randomHeight()} />
                 <IntroCard height={randomHeight()} />
                 <IntroCard height={randomHeight()} />
                 <IntroCard height={randomHeight()} />
-            </motion.div>
+            </motion.div> */}
         </motion.div>
     );
 }
@@ -55,4 +95,8 @@ const containerVariants = {
         transition: { duration: 1 },
     },
     exit: { x: '-100vw', transition: { ease: 'easeInOut' } },
+};
+const reusmeVariants = {
+    hover: { scale: 1.1 },
+    tap: { scale: 0.9, rotate: '15deg' },
 };
