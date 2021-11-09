@@ -7,9 +7,7 @@ import WelcomePitcure from '../../assets/images/grad-photo.jpg';
 // import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
-function randomHeight() {
-    return Number(Math.random() * (500 - 300 + 1) + 300);
-}
+
 export default function Home() {
     return (
         <motion.div
@@ -53,13 +51,13 @@ export default function Home() {
                     </p>
                     <p> I am interested in the following fields:</p>
                     <ul>
+                        <li> Web Development, and Software Engineering</li>
+                        <li> Cyber Security, and Computer Networking</li>
                         <li>
                             {' '}
                             Data Science, Machine Learning, and Artificial
                             Intelligence
                         </li>
-                        <li> Web Development, and Software Engineering</li>
-                        <li> Cyber Security, and Computer Networking</li>
                     </ul>
                 </div>
                 <div className="logoWrapper">

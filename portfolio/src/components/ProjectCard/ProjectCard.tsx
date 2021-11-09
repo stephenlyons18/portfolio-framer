@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './ProjectCard.scss';
-import TestImage from '../../assets/images/grad-photo.jpg';
 
 interface Props {
     imgPath: string;
@@ -23,7 +22,7 @@ const ProjectCard: React.FC<Props> = ({
     return (
         <motion.div
             //change the className when the card is closed
-            className={`project-card ${isOpen ? 'open' : ''}`}
+            className={`project-card-${isOpen ? 'open' : 'closed'}`}
             onClick={() => setIsOpen(!isOpen)}
             variants={projectCardVariants}
             animate={isOpen ? 'open' : 'closed'}
