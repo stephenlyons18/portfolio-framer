@@ -42,3 +42,17 @@
     box-shadow: 0px 0px 10px #1a2932;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    .projectContainer {
+        width: 80%;
+        height: 20%;
+        margin: 1%;
+    }
+}
+@media (max-width: 425px) {
+    .projectContainer {
+        width: 90%;
+        height: 40%;
+        margin: 1%;
+    }
+}

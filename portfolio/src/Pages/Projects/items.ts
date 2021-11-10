@@ -5,7 +5,7 @@ export const items = [
         projectTitle: 'ASI SOAR Game',
         description:
             'During the COVID-19 Pandemic, I created a game for Freshman to complete in liu of having an in-person Orientation. The students were asked to participate in',
-        imgSrc: '../../assets/images/grad-photo.jpg',
+        imgSrc: require('../../assets/images/grad-photo.jpg'),
         url: 'https://www.asicsulb.org/corporate/',
         layoutID: 'asi-soar-game',
     },
@@ -14,7 +14,7 @@ export const items = [
         projectTitle: 'ASI SOAR Game',
         description:
             'During the COVID-19 Pandemic, I created a game for Freshman to complete in liu of having an in-person Orientation. The students were asked to participate in',
-        imgSrc: '../../assets/images/grad-photo.jpg',
+        imgSrc: require('../../assets/images/grad-photo.jpg'),
         url: 'https://www.asicsulb.org/corporate/',
         layoutID: 'asi-soar-game',
     },
@@ -23,7 +23,7 @@ export const items = [
         projectTitle: 'ASI SOAR Game',
         description:
             'During the COVID-19 Pandemic, I created a game for Freshman to complete in liu of having an in-person Orientation. The students were asked to participate in',
-        imgSrc: '../../assets/images/grad-photo.jpg',
+        imgSrc: require('../../assets/images/grad-photo.jpg'),
         url: 'https://www.asicsulb.org/corporate/',
         layoutID: 'asi-soar-game',
     },
@@ -32,7 +32,7 @@ export const items = [
         projectTitle: 'ASI SOAR Game',
         description:
             'During the COVID-19 Pandemic, I created a game for Freshman to complete in liu of having an in-person Orientation. The students were asked to participate in',
-        imgSrc: '../../assets/images/grad-photo.jpg',
+        imgSrc: require('../../assets/images/grad-photo.jpg'),
         url: 'https://www.asicsulb.org/corporate/',
         layoutID: 'asi-soar-game',
     },
@@ -41,7 +41,7 @@ export const items = [
         projectTitle: 'ASI SOAR Game',
         description:
             'During the COVID-19 Pandemic, I created a game for Freshman to complete in liu of having an in-person Orientation. The students were asked to participate in',
-        imgSrc: '../../assets/images/grad-photo.jpg',
+        imgSrc: require('../../assets/images/grad-photo.jpg'),
         url: 'https://www.asicsulb.org/corporate/',
         layoutID: 'asi-soar-game',
     },

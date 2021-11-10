@@ -1,12 +1,12 @@
 .aboutContainer {
     background: #000428; /* fallback for old browsers */
     background: -webkit-linear-gradient(
-        to top,
+        to bottom,
         #004e92,
         #000428
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
-        to top,
+        to bottom,
         #004e92,
         #000428
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -48,5 +48,22 @@
     margin-bottom: 5%;
     border-radius: 15px;
     opacity: 0.8;
-    cursor: pointer;
+    cursor: grabbing;
+}
+.aboutText a {
+    color: #5aff15;
+    margin: 2%;
+    border-radius: 10px;
+    &:hover {
+        text-decoration: underline;
+        background-color: #1a2932;
+        padding: 5px;
+        margin: 2%;
+        transition: all 0.2s ease;
+    }
+}
+.aboutText hr {
+    width: 80%;
+    border: 1px solid #fff;
+    margin: 2%;
 }

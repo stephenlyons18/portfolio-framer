@@ -11,7 +11,7 @@ import WelcomePitcure from '../../assets/images/grad-photo.jpg';
 export default function Home() {
     return (
         <motion.div
-            className="containerStyle"
+            className="homeContainerStyle"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -42,6 +42,14 @@ export default function Home() {
             </motion.div>
             {/* Create a div about the college, load the CSULB logo from assets and display in a flex container with row format */}
             <div className="csulbContainer">
+                <motion.img
+                    className="csulbLogo"
+                    src={require('../../assets/images/csulb-logo.png')}
+                    alt="csulb-logo"
+                    drag="y"
+                    dragConstraints={{ top: 60, bottom: 60 }}
+                    dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+                />
                 <div className="csulbText">
                     <h1 className="csulbHeader">I currently attend CSULB</h1>
                     <p>
@@ -59,13 +67,6 @@ export default function Home() {
                             Intelligence
                         </li>
                     </ul>
-                </div>
-                <div className="logoWrapper">
-                    <img
-                        className="csulbLogo"
-                        src={require('../../assets/images/csulb-logo.png')}
-                        alt="csulb-logo"
-                    />
                 </div>
             </div>
 

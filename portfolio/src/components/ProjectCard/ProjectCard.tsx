@@ -34,7 +34,8 @@ const ProjectCard: React.FC<Props> = ({
                     src={imgPath}
                     alt={altText}
                     className="projectImage"
-                    whileHover={{ scale: 1.1 }}
+                    variants={projectImgVariants}
+                    whileHover="hover"
                 />
             </a>
 
@@ -64,15 +65,33 @@ const projectCardVariants = {
         width: '50%',
         height: 'auto',
         backgroundColor: '#27475e',
-        padding: '5%',
-        margin: '5%',
+        paddingLeft: '8%',
+        paddingRight: '8%',
+        paddingBottom: '8%',
         borderRadius: '15px',
 
         transition: { duration: 0.5, ease: 'easeInOut' },
     },
     hover: {
         opacity: 1,
-        transition: { duration: 0.2, ease: 'easeInOut' },
+        transition: { duration: 0.4, ease: 'easeInOut' },
+    },
+};
+const projectImgVariants = {
+    open: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.5, ease: 'easeInOut' },
+    },
+    closed: {
+        opacity: 0.6,
+        scale: 1,
+        transition: { duration: 0.5, ease: 'easeInOut' },
+    },
+    hover: {
+        opacity: 1,
+        scale: 1.1,
+        transition: { duration: 0.4, ease: 'easeInOut' },
     },
 };
 const projectTextVariants = {

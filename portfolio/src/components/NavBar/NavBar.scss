@@ -29,6 +29,7 @@
 @media (max-width: 500px) {
     .NavContainerStyle {
         font-size: 0.7rem;
+        justify-content: center;
     }
     .NavLinkStyle {
         margin: 5px;
@@ -46,4 +47,10 @@
         color: black;
         background-color: white;
     }
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }

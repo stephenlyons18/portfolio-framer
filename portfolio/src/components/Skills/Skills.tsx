@@ -60,7 +60,7 @@ const skills = [
 ];
 const containerVariants = {
     closed: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    show: { opacity: 1, transition: { staggerChildren: 0.2 } },
     exit: { opacity: 0 },
 };
 const skillVariants = {

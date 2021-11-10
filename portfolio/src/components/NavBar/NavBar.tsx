@@ -6,6 +6,8 @@ import { Chat, LinkedinLogo, GithubLogo } from 'phosphor-react';
 
 const NavBar = () => {
     const [open, setOpen] = useState('closed');
+    //
+
     return (
         <nav>
             <div className="NavContainerStyle">
@@ -16,6 +18,7 @@ const NavBar = () => {
                             className="NavLinkStyle"
                         >
                             <h3 style={{ margin: '0px' }}>Stephen Lyons</h3>
+
                             <h5 style={{ margin: '0px' }}>Software Engineer</h5>
                         </motion.div>
                     </Link>
@@ -41,7 +44,7 @@ const NavBar = () => {
                         </motion.div>
                     </Link>
                 </div>
-                <motion.div>
+                <motion.div className="socials">
                     <Chat size={40} className="contactButtonStyle" />
                     <a
                         href="https://www.linkedin.com/in/stephen-lyons/"

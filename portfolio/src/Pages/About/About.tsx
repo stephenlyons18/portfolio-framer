@@ -6,7 +6,13 @@ import { Skills } from '../../components/Skills/Skills';
 import './AboutStyles.scss';
 const About = () => {
     return (
-        <motion.div className="aboutContainer">
+        <motion.div
+            className="aboutContainer"
+            variants={aboutContainerVariants}
+            exit="exit"
+            initial="hidden"
+            animate="visible"
+        >
             <h1 className="skillsHeader">Skills</h1>
             <Skills />
             <motion.div className="aboutContent">
@@ -21,7 +27,7 @@ const About = () => {
                         helping develop a social media application centered
                         around events.
                     </p>
-
+                    <hr />
                     <h1>Hobbies</h1>
                     <ul>
                         <li>Skiing</li>
@@ -31,6 +37,7 @@ const About = () => {
                         <li>Artificial Intelligence</li>
                         <li>Web Development and Game Development</li>
                     </ul>
+                    <hr />
                     <h1>Relevant Courses</h1>
                     <ul>
                         <li>Data Structures</li>
@@ -40,6 +47,71 @@ const About = () => {
                         <li>C++</li>
                         <li>Object Oriented Programming (Java)</li>
                         <li>Python</li>
+                    </ul>
+                    <hr />
+                    <h1>Clubs and Activities</h1>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://csulbsnowteam.weebly.com/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                CSULB Snow
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://csulb.acm.org/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                CSULB Assosciation of Computing Machinery
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/csulbjiujitsu/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                CSULB Jiu Jitsu
+                            </a>
+                        </li>
+                    </ul>
+                    <hr />
+                    <h1>Professional Experience</h1>
+                    <ul>
+                        <li>
+                            Web Developer at{' '}
+                            <a
+                                href="https://www.asicsulb.org/corporate/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                CSULB ASI
+                            </a>
+                        </li>
+                        <li>
+                            Software Engineer and Security Analyst at{' '}
+                            <a
+                                href="https://joindown.com/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Down Friend Groups
+                            </a>
+                        </li>
+                        <li>
+                            Top Emerging Talent at{' '}
+                            <a
+                                href="https://www.about.pangea.app/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Pangea.app
+                            </a>
+                        </li>
                     </ul>
                 </motion.div>
                 <motion.div className="aboutImages">
@@ -86,6 +158,15 @@ const imgVariants = {
     tap: {
         scale: 1,
     },
+};
+const aboutContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        y: '0vh',
+        transition: { duration: 1 },
+    },
+    exit: { x: '100vw', transition: { ease: 'easeInOut' } },
 };
 
 export default About;

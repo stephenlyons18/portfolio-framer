@@ -1,4 +1,4 @@
-.containerStyle {
+.homeContainerStyle {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -47,13 +47,17 @@
     width: 20%;
     height: 20%;
     border-radius: 25px;
-    opacity: 0.75;
+    opacity: 0.85;
 }
 .csulbText {
     width: 80%;
     height: 20%;
     border-radius: 25px;
-    opacity: 0.75;
+    opacity: 0.9;
+    text-align: right;
+}
+.csulbText ul {
+    direction: rtl;
 }
 .csulbContainer {
     display: flex;
@@ -70,11 +74,10 @@
     width: 20%;
     height: 20%;
     border-radius: 25px;
-    opacity: 0.75;
+    opacity: 0.95;
+    background-color: #fff;
 }
-.logoWrapper {
-    background-color: #434343;
-}
+
 .resumeButton {
     color: #fff;
     font-size: 1.3rem;
