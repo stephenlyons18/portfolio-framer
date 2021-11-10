@@ -4,6 +4,7 @@ import './HomeStyles.scss';
 import WelcomeText from '../../components/WelcomeText/WelcomeText';
 import OpenAIPlayground from '../../components/TextPredict/OpenAIPlayground';
 import WelcomePitcure from '../../assets/images/grad-photo.jpg';
+
 // import IntroCards from '../../components/IntroCard/IntroCards';
 
 // Learn more: https://www.framer.com/docs/guides/code-components/
@@ -27,19 +28,18 @@ export default function Home() {
                 />
             </div>
             {/* create a button similar to the nav buttons that downloads my resume*/}
-            <motion.div
+
+            <motion.a
                 variants={reusmeVariants}
                 whileHover="hover"
                 whileTap="tap"
                 className="resumeButtonWrapper"
+                href={require('../../assets/files/stephen-lyons-resume.pdf')}
+                download="stephen-lyons-resume"
             >
-                <a
-                    href={require('../../assets/files/stephen-lyons-resume.pdf')}
-                    download="stephen-lyons-resume"
-                >
-                    <button className="resumeButton">Download Resume</button>
-                </a>
-            </motion.div>
+                <button className="resumeButton">Download Resume</button>
+            </motion.a>
+
             {/* Create a div about the college, load the CSULB logo from assets and display in a flex container with row format */}
             <div className="csulbContainer">
                 <motion.img
@@ -69,6 +69,7 @@ export default function Home() {
                     </ul>
                 </div>
             </div>
+            <h1>OpenAI Demonstration</h1>
 
             <OpenAIPlayground />
 

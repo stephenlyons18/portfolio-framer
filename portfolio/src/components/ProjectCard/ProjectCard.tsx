@@ -8,6 +8,7 @@ interface Props {
     projectText: string;
     projectTitle: string;
     projectUrl: string;
+    techStack: string[];
 }
 
 const ProjectCard: React.FC<Props> = ({
@@ -16,6 +17,7 @@ const ProjectCard: React.FC<Props> = ({
     projectText,
     projectTitle,
     projectUrl,
+    techStack,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     // const myImage: File = require(imgPath);
@@ -42,13 +44,26 @@ const ProjectCard: React.FC<Props> = ({
             <h3>{projectTitle}</h3>
 
             {isOpen ? (
-                <motion.p
-                    variants={projectTextVariants}
-                    initial="closed"
-                    animate={isOpen ? 'open' : 'closed'}
-                >
-                    {projectText}
-                </motion.p>
+                <div className="project-text">
+                    <h2>Description</h2>
+                    <motion.p
+                        variants={projectTextVariants}
+                        initial="closed"
+                        animate={isOpen ? 'open' : 'closed'}
+                    >
+                        {projectText}
+                    </motion.p>
+                    <h2>Technologies</h2>
+                    <motion.ul
+                        variants={projectTextVariants}
+                        initial="closed"
+                        animate={isOpen ? 'open' : 'closed'}
+                    >
+                        {techStack.map((tech) => (
+                            <li key={tech}>{tech}</li>
+                        ))}
+                    </motion.ul>
+                </div>
             ) : null}
         </motion.div>
     );
@@ -58,12 +73,13 @@ const projectCardVariants = {
     open: {
         opacity: 1,
         width: '80%',
+        height: 'auto',
         transition: { duration: 0.5, ease: 'easeOut' },
     },
     closed: {
         opacity: 0.6,
         width: '50%',
-        height: 'auto',
+        height: '30%',
         backgroundColor: '#27475e',
         paddingLeft: '8%',
         paddingRight: '8%',

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import { motion, LayoutGroup } from 'framer-motion';
-import image1 from '../../assets/images/grad-photo.jpg';
+
 import './ProjectStyles.scss';
 
 import { items } from './items';
@@ -26,6 +26,7 @@ const Projects = () => {
                                     projectText={item.description}
                                     key={item.projectID}
                                     projectUrl={item.url}
+                                    techStack={item.techStack}
                                 />
                             </motion.div>
                         );

@@ -40,13 +40,14 @@ const About = () => {
                     <hr />
                     <h1>Relevant Courses</h1>
                     <ul>
-                        <li>Data Structures</li>
-                        <li>Software Engineering</li>
                         <li>Cyber Security</li>
                         <li>Algorithms</li>
+                        <li>BlockChain Technologies (UC Berkeley)</li>
+                        <li>Data Structures</li>
                         <li>C++</li>
                         <li>Object Oriented Programming (Java)</li>
                         <li>Python</li>
+                        <li>Software Engineering</li>
                     </ul>
                     <hr />
                     <h1>Clubs and Activities</h1>
