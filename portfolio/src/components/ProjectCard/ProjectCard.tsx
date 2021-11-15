@@ -21,6 +21,7 @@ const ProjectCard: React.FC<Props> = ({
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     // const myImage: File = require(imgPath);
+
     return (
         <motion.div
             //change the className when the card is closed
@@ -31,9 +32,9 @@ const ProjectCard: React.FC<Props> = ({
             initial="closed"
             whileHover="hover"
         >
-            <a href={projectUrl}>
+            <a href={projectUrl} target="_blank" rel="noreferrer">
                 <motion.img
-                    src={imgPath}
+                    src="require(imgPath)"
                     alt={altText}
                     className="projectImage"
                     variants={projectImgVariants}
@@ -41,7 +42,7 @@ const ProjectCard: React.FC<Props> = ({
                 />
             </a>
 
-            <h3>{projectTitle}</h3>
+            <h1>{projectTitle}</h1>
 
             {isOpen ? (
                 <div className="project-text">
@@ -73,24 +74,22 @@ const projectCardVariants = {
     open: {
         opacity: 1,
         width: '80%',
-        height: 'auto',
-        transition: { duration: 0.5, ease: 'easeOut' },
+
+        transition: { duration: 0.5, ease: 'easeInOut' },
     },
     closed: {
         opacity: 0.6,
         width: '50%',
         height: '30%',
         backgroundColor: '#27475e',
-        paddingLeft: '8%',
-        paddingRight: '8%',
-        paddingBottom: '8%',
-        borderRadius: '15px',
 
+        borderRadius: '15px',
         transition: { duration: 0.5, ease: 'easeInOut' },
     },
     hover: {
         opacity: 1,
-        transition: { duration: 0.4, ease: 'easeInOut' },
+        transition: { duration: 0.2, ease: 'easeInOut' },
+        boxShadow: '0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)',
     },
 };
 const projectImgVariants = {

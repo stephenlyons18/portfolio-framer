@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { motion, LayoutGroup } from 'framer-motion';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 import './ProjectStyles.scss';
 
@@ -15,16 +15,18 @@ const Projects = () => {
             animate="visible"
             exit="exit"
         >
-            <motion.div className="projectsContainer">
-                <LayoutGroup>
+            <motion.div className="projectsContainer" layout>
+                <AnimateSharedLayout>
                     {items.map((item) => {
                         return (
-                            <motion.div layout className="projectContainer">
+                            <motion.div
+                                className="projectContainer"
+                                key={item.projectID}
+                            >
                                 <ProjectCard
                                     imgPath={item.imgSrc}
                                     projectTitle={item.projectTitle}
                                     projectText={item.description}
-                                    key={item.projectID}
                                     projectUrl={item.url}
                                     techStack={item.techStack}
                                 />
@@ -34,7 +36,7 @@ const Projects = () => {
                     {/* <AnimatePresence>
                         {selectedId && <motion.img layoutId={selectedId} />}
                     </AnimatePresence> */}
-                </LayoutGroup>
+                </AnimateSharedLayout>
             </motion.div>
         </motion.div>
     );

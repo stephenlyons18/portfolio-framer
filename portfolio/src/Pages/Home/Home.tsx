@@ -4,6 +4,7 @@ import './HomeStyles.scss';
 import WelcomeText from '../../components/WelcomeText/WelcomeText';
 import OpenAIPlayground from '../../components/TextPredict/OpenAIPlayground';
 import WelcomePitcure from '../../assets/images/grad-photo.jpg';
+import CSULBLogo from '../../assets/images/csulb-logo.png';
 
 // import IntroCards from '../../components/IntroCard/IntroCards';
 
@@ -33,7 +34,6 @@ export default function Home() {
                 variants={reusmeVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="resumeButtonWrapper"
                 href={require('../../assets/files/stephen-lyons-resume.pdf')}
                 download="stephen-lyons-resume"
             >
@@ -44,14 +44,14 @@ export default function Home() {
             <div className="csulbContainer">
                 <motion.img
                     className="csulbLogo"
-                    src={require('../../assets/images/csulb-logo.png')}
+                    src={CSULBLogo}
                     alt="csulb-logo"
                     drag="y"
                     dragConstraints={{ top: 60, bottom: 60 }}
                     dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
                 />
                 <div className="csulbText">
-                    <h1 className="csulbHeader">I currently attend CSULB</h1>
+                    <h1>I currently attend CSULB</h1>
                     <p>
                         {' '}
                         My major is Computer Science and I am a Junior at

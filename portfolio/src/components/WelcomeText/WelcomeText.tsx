@@ -14,7 +14,7 @@ const WelcomeText = () => {
                 animate="show"
             >
                 <motion.div className="welcomeText">
-                    <motion.div className="helloText">
+                    <motion.h1 className="helloText">
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter
@@ -23,9 +23,9 @@ const WelcomeText = () => {
                                     .typeString('hello! my name is stephen');
                             }}
                         />
-                    </motion.div>
+                    </motion.h1>
 
-                    <motion.div
+                    <motion.h2
                         className="iAmClass"
                         initial={{ x: '-100vw' }}
                         animate={{ x: '0vw' }}
@@ -48,7 +48,7 @@ const WelcomeText = () => {
                             }}
                             options={{ loop: true }}
                         />
-                    </motion.div>
+                    </motion.h2>
                 </motion.div>
             </motion.div>
         </div>

@@ -5,7 +5,7 @@ export const items = [
         projectTitle: 'ASI SOAR Game',
         description:
             'During the COVID-19 Pandemic, I created a game for Freshman to complete in liu of having an in-person Orientation. The students were asked to participate in',
-        imgSrc: require('../../assets/images/soar-game.png'),
+        imgSrc: '../../assets/images/soar-game.png',
         url: 'https://www.asicsulb.org/soar/',
         layoutID: 'asi-soar-game',
         techStack: ['HTML', 'CSS', 'React', "API's", 'Node', 'Express', 'Git'],
@@ -14,7 +14,7 @@ export const items = [
         projectID: 2,
         projectTitle: 'Down Friend Groups',
         description: 'Down is a ',
-        imgSrc: require('../../assets/images/downlogo.png'),
+        imgSrc: '../../assets/images/downlogo.png',
         url: 'https://www.joindown.com',
         layoutID: 'down-friend-groups',
         techStack: [
@@ -31,7 +31,7 @@ export const items = [
         projectID: 3,
         projectTitle: 'ASI CSULB and ASI Recreation',
         description: 'I have worked for ',
-        imgSrc: require('../../assets/images/asicsulb.png'),
+        imgSrc: '../../assets/images/asicsulb.png',
         url: 'https://www.asicsulb.org/corporate/',
         layoutID: 'asi-soar-game',
         techStack: [
