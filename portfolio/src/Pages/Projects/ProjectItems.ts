@@ -1,4 +1,4 @@
-export const items = [
+export const ProjectItems = [
     // Photo by ivan Torres on Unsplash
     {
         projectID: 1,
