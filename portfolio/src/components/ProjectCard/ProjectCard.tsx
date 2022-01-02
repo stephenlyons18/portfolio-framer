@@ -34,7 +34,7 @@ const ProjectCard: React.FC<Props> = ({
         >
             <a href={projectUrl} target="_blank" rel="noreferrer">
                 <motion.img
-                    src="require(imgPath)"
+                    src={imgPath}
                     alt={altText}
                     className="projectImage"
                     variants={projectImgVariants}

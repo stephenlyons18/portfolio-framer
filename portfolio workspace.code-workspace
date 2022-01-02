@@ -6,7 +6,6 @@
     ],
     "settings": {
         "editor.fontSize": 19,
-        "workbench.colorTheme": "SynthWave '84",
-        "discord.enabled": false
+        "workbench.colorTheme": "SynthWave '84"
     }
 }

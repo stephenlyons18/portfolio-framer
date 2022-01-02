@@ -30,16 +30,7 @@ export default function Home() {
             </div>
             {/* create a button similar to the nav buttons that downloads my resume*/}
 
-            <motion.a
-                variants={reusmeVariants}
-                whileHover="hover"
-                whileTap="tap"
-                href={require('../../assets/files/stephen-lyons-resume.pdf')}
-                download="stephen-lyons-resume"
-            >
-                <button className="resumeButton">Download Resume</button>
-            </motion.a>
-
+            <hr />
             {/* Create a div about the college, load the CSULB logo from assets and display in a flex container with row format */}
             <div className="csulbContainer">
                 <motion.img
@@ -69,6 +60,16 @@ export default function Home() {
                     </ul>
                 </div>
             </div>
+            <motion.a
+                variants={reusmeVariants}
+                whileHover="hover"
+                whileTap="tap"
+                href={require('../../assets/files/stephen-lyons-resume.pdf')}
+                download="stephen-lyons-resume"
+            >
+                <button className="resumeButton">Download Resume</button>
+            </motion.a>
+            <hr />
             <h1>OpenAI Demonstration</h1>
 
             <OpenAIPlayground />
@@ -98,5 +99,5 @@ const containerVariants = {
 };
 const reusmeVariants = {
     hover: { scale: 1.1 },
-    tap: { scale: 0.9, rotate: '15deg' },
+    tap: { scale: 1.1, rotate: '5deg' },
 };
