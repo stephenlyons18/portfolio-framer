@@ -1,55 +1,64 @@
-import React from 'react';
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { motion, AnimateSharedLayout } from 'framer-motion';
-
+import { useState } from 'react';
+import { motion, AnimateSharedLayout, Reorder } from 'framer-motion';
+import { ProjectItems } from './ProjectItems';
 import './ProjectStyles.scss';
 
-import { items } from './items';
+function Projects() {
+    const [items, setItems] = useState(ProjectItems);
+    const [openItem, setOpenItem] = useState(null);
 
-const Projects = () => {
     return (
-        <motion.div
-            className="containerStyleAbout"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-        >
-            <motion.div className="projectsContainer" layout>
-                <AnimateSharedLayout>
-                    {items.map((item) => {
-                        return (
-                            <motion.div
-                                className="projectContainer"
-                                key={item.projectID}
-                            >
-                                <ProjectCard
-                                    imgPath={item.imgSrc}
-                                    projectTitle={item.projectTitle}
-                                    projectText={item.description}
-                                    projectUrl={item.url}
-                                    techStack={item.techStack}
-                                />
-                            </motion.div>
-                        );
-                    })}
-                    {/* <AnimatePresence>
-                        {selectedId && <motion.img layoutId={selectedId} />}
-                    </AnimatePresence> */}
-                </AnimateSharedLayout>
-            </motion.div>
-        </motion.div>
+        <Reorder.Group axis="x" values={items} onReorder={setItems}>
+            {items.map((item) => (
+                <Reorder.Item key={item.projectID} value={item}>
+                    <motion.div
+                        style={{
+                            height: '200px',
+                            width: '200px',
+                            background: '#fff',
+                            borderRadius: '10px',
+                            x: 0,
+                            y: 0,
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                        animate={{
+                            x: 0,
+                            y: 0,
+                            transition: {
+                                type: 'spring',
+                                stiffness: 100,
+                                damping: 15,
+                            },
+                        }}
+                        initial={{ x: -100, y: -100 }}
+                        exit={{ x: -100, y: -100 }}
+                    ></motion.div>
+                </Reorder.Item>
+            ))}
+        </Reorder.Group>
     );
-};
-
-const containerVariants = {
-    hidden: { opacity: 0, x: '100vw' },
-    visible: {
-        opacity: 1,
-        x: '0vw',
-        transition: { duration: 1 },
+}
+const ProjectCardVariants = {
+    hidden: {
+        opacity: 0,
+        x: '0',
+        transition: {
+            type: 'spring',
+            stiffness: 100,
+            damping: 15,
+        },
     },
-    exit: { y: '100vh', transition: { ease: 'easeInOut' } },
+    show: {
+        opacity: 1,
+        x: '50vw',
+        transition: {
+            type: 'spring',
+            stiffness: 100,
+            damping: 15,
+        },
+    },
 };
 
 export default Projects;
