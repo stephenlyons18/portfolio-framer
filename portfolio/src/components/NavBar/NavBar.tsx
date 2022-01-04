@@ -2,13 +2,19 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
-import { Chat, LinkedinLogo, GithubLogo } from 'phosphor-react';
+import { Chat, LinkedinLogo, GithubLogo, List } from 'phosphor-react';
 
 const NavBar = () => {
-    const [open, setOpen] = useState('closed');
-    //
+    //detect if the device is a mobile device
+    const isMobile = window.innerWidth < 500;
+    const [isMobileOpen, setMobileOpen] = useState('closed');
+    //create a window resize listener and set the state of the isMobile
+    //variable to the new value
+    window.addEventListener('resize', () => {
+        isMobile ? setMobileOpen('open') : setMobileOpen('closed');
+    });
 
-    return (
+    return !isMobile ? (
         <nav>
             <div className="NavContainerStyle">
                 <div style={{ color: 'white', marginLeft: '40px' }}>
@@ -66,7 +72,94 @@ const NavBar = () => {
                 </motion.div>
             </div>
         </nav>
+    ) : (
+        <>
+            <div className="mobileNav">
+                <div className="mobileNavContainer">
+                    <div className="mobileNavTitle">
+                        <Link to="/" className="noDecor">
+                            <motion.div
+                                whileTap={{ scale: 0.9 }}
+                                className="NavLinkStyle"
+                            >
+                                <h3 style={{ margin: '0px' }}>Stephen Lyons</h3>
+                            </motion.div>
+                        </Link>
+                    </div>
+                    {/* create a menu button that opens the menu */}
+                    <div className="mobileNavMenu">
+                        <motion.div
+                            className="mobileNavMenuButton"
+                            onClick={() => {
+                                setMobileOpen(
+                                    isMobileOpen === 'closed'
+                                        ? 'open'
+                                        : 'closed'
+                                );
+                                console.log(isMobileOpen);
+                            }}
+                            animate={isMobileOpen}
+                            initial="closed"
+                            variants={MenuButtonVariants}
+                        >
+                            <List size={40} style={{ color: '#fff' }} />
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+            {isMobileOpen === 'closed' ? (
+                <ul>
+                    <li>
+                        <Link to="/projects" className="noDecor">
+                            <motion.div
+                                whileTap={{ scale: 0.9 }}
+                                className="NavLinkStyle"
+                            >
+                                <h5 style={{ margin: '0px' }}>PROJECTS</h5>
+                            </motion.div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/About" className="noDecor">
+                            <motion.div
+                                className="NavLinkStyle"
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <h5 style={{ margin: '0px' }}>ABOUT</h5>
+                            </motion.div>
+                        </Link>
+                    </li>
+                </ul>
+            ) : (
+                <></>
+            )}
+        </>
     );
+};
+const MenuButtonVariants = {
+    open: {
+        width: '80%',
+        height: 'auto',
+        background: '#434343',
+
+        transition: {
+            spring: {
+                stiffness: 100,
+                damping: 10,
+            },
+        },
+    },
+    closed: {
+        height: '0',
+        width: '0',
+        background: '#000',
+        transition: {
+            spring: {
+                stiffness: 100,
+                damping: 10,
+            },
+        },
+    },
 };
 
 export default NavBar;

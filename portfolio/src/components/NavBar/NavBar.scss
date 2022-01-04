@@ -7,8 +7,18 @@
     align-items: center;
     background: #000;
     border: 1px solid whiTe;
-    max-height: fit-content;
 }
+.mobileNavContainer {
+    display: flex;
+    width: 99.92%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+    background: #000;
+    border: 1px solid whiTe;
+}
+
 .NavLinkStyle {
     border-radius: 5px;
     background: none;
