@@ -24,7 +24,6 @@ input:focus {
     outline: none;
 }
 input {
-    font-size: 5vw;
     align-items: center;
 }
 ::placeholder {
@@ -42,4 +41,89 @@ body::-webkit-scrollbar-thumb {
     background-color: #5aff15; /* color of the scroll thumb */
     border-radius: 25px; /* roundness of the scroll thumb */
     border: 7px solid #000; /* creates padding around scroll thumb */
+}
+h1 {
+    font-size: 38px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 12px;
+}
+input {
+    font-size: 18px;
+}
+button {
+    font-size: 18px;
+}
+p {
+    font-size: 18px;
+}
+@media (min-width: 1000px) {
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+    input {
+        font-size: 20px;
+    }
+    button {
+        font-size: 20px;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 12px;
+    }
+    h5 {
+        font-size: 10px;
+    }
+    h6 {
+        font-size: 8px;
+    }
+    input {
+        font-size: 12px;
+    }
+    button {
+        font-size: 12px;
+    }
+    p {
+        font-size: 12px;
+    }
 }

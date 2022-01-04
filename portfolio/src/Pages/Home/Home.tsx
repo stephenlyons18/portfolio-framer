@@ -58,6 +58,7 @@ export default function Home() {
                             Intelligence
                         </li>
                     </ul>
+                    
                 </div>
             </div>
             <motion.a

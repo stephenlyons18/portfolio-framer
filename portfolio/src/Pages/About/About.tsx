@@ -114,6 +114,29 @@ const About = () => {
                             </a>
                         </li>
                     </ul>
+                    <hr />
+                    <h1>Education</h1>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.csulb.edu/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                CSULB
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.bohs.bousd.us"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Brea Olinda High School
+                            </a>
+                        </li>
+                    </ul>
+                    
                 </motion.div>
                 <motion.div className="aboutImages">
                     <motion.img

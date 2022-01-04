@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 import Home from './Pages/Home/Home';
 import Projects from './Pages/Projects/Projects';
@@ -10,22 +10,15 @@ import useState from 'react';
 
 function App() {
     //const [ContactToggle, setContactToggle] = useState(false);
-    const location = useLocation();
     return (
         <div>
             <NavBar />
             <AnimatePresence exitBeforeEnter>
-                <Switch location={location} key={location.key}>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/about">
-                        <About />
-                    </Route>
-                    <Route path="/projects">
-                        <Projects />
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/about" element={<About />} />
+                </Routes>
             </AnimatePresence>
         </div>
     );
