@@ -178,9 +178,11 @@ const About = () => {
 const imgVariants = {
     hover: {
         scale: 1.1,
+        cursor: 'grab',
     },
     tap: {
         scale: 1,
+        cursor: 'grabbing',
     },
 };
 const aboutContainerVariants = {
