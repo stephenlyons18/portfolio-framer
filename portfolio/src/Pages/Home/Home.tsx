@@ -16,48 +16,50 @@ export default function Home() {
     //use react-in-viewport to make the the picture fade in when it is in view
     const [isInViewport, setIsInViewport] = useState(false);
     const Block = (props: { inViewport: boolean }) => {
-        <div className="csulbContainer">
-            <motion.img
-                className="csulbLogo"
-                src={CSULBLogo}
-                variants={logoVariants}
-                initial="initial"
-                animate={isInViewport ? 'inView' : 'outOfView'}
-                id="csulbLogo"
-                alt="csulb-logo"
-                drag="y"
-                dragConstraints={{ top: 60, bottom: 60 }}
-                dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
-            />
-            <div className="csulbText">
-                <h1>I currently attend CSULB</h1>
-                <p>
-                    {' '}
-                    My major is Computer Science and I am a Junior at California
-                    State University, Long Beach.
-                </p>
-                <p> I am interested in the following fields:</p>
-                <ul>
-                    <li> Web Development, and Software Engineering</li>
-                    <li> Cyber Security, and Computer Networking</li>
-                    <li>
+        return (
+            <div className="csulbContainer">
+                <motion.img
+                    className="csulbLogo"
+                    src={CSULBLogo}
+                    variants={logoVariants}
+                    initial="initial"
+                    animate={isInViewport ? 'inView' : 'outOfView'}
+                    id="csulbLogo"
+                    alt="csulb-logo"
+                    drag="y"
+                    dragConstraints={{ top: 60, bottom: 60 }}
+                    dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+                />
+                <div className="csulbText">
+                    <h1>I currently attend CSULB</h1>
+                    <p>
                         {' '}
-                        Data Science, Machine Learning, and Artificial
-                        Intelligence
-                    </li>
-                </ul>
-            </div>
+                        My major is Computer Science and I am a Junior at
+                        California State University, Long Beach.
+                    </p>
+                    <p> I am interested in the following fields:</p>
+                    <ul>
+                        <li> Web Development, and Software Engineering</li>
+                        <li> Cyber Security, and Computer Networking</li>
+                        <li>
+                            {' '}
+                            Data Science, Machine Learning, and Artificial
+                            Intelligence
+                        </li>
+                    </ul>
+                </div>
 
-            <motion.a
-                variants={reusmeVariants}
-                whileHover="hover"
-                whileTap="tap"
-                href={require('../../assets/files/stephen-lyons-resume.pdf')}
-                download="stephen-lyons-resume"
-            >
-                <button className="resumeButton">Download Resume</button>
-            </motion.a>
-        </div>;
+                <motion.a
+                    variants={reusmeVariants}
+                    whileHover="hover"
+                    whileTap="tap"
+                    href={require('../../assets/files/stephen-lyons-resume.pdf')}
+                    download="stephen-lyons-resume"
+                >
+                    <button className="resumeButton">Download Resume</button>
+                </motion.a>
+            </div>
+        );
     };
     const ViewportBlock = viewport.handleViewport(Block);
     const animateLogo = () => {

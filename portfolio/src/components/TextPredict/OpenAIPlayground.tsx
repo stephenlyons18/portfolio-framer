@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import './OpenAIPlayground.scss';
 import { CaretRight } from 'phosphor-react';
-
+import AES from 'crypto-js/sha256';
+import { something } from './openai';
 const OpenAIPlayground = () => {
     const [text, setText] = useState('The quick brown fox jumped');
     const [prediction, setPrediction] = useState('');
     // const [code, setCode] = useState('Create a for loop');
     // const [codePrediction, setCodePrediction] = useState('');
+    const CryptoJS = require('crypto-js');
+
     const [temperature, setTemperature] = useState(0);
 
-    const handleSubmit = (evt) => {
+    const OpenAI = require('openai-api');
+    const openAI_props = CryptoJS.AES.decrypt(
+        something,
+        'secret key 123'
+    ).toString(CryptoJS.enc.Utf8);
+    const openai = new OpenAI(openAI_props);
+
+    const handleSubmit = (evt: { preventDefault: () => void }) => {
         evt.preventDefault();
         console.log(text);
         (async () => {
@@ -17,7 +27,7 @@ const OpenAIPlayground = () => {
                 engine: 'davinci',
                 prompt: text,
                 maxTokens: 100,
-                temperature: 0,
+                temperature: temperature,
                 topP: 1,
                 presencePenalty: 0,
                 frequencyPenalty: 0,
@@ -26,7 +36,7 @@ const OpenAIPlayground = () => {
                 stream: false,
                 stop: ['\n', 'testing'],
             });
-
+            console.log(gptResponse);
             setPrediction(gptResponse.data.choices[0].text);
         })();
     };
@@ -49,10 +59,6 @@ const OpenAIPlayground = () => {
     //         setCodePrediction(gptCodeResponse.data.choices[0].text);
     //     })();
     // };
-
-    const OpenAI = require('openai-api');
-    const openAI_key = process.env.REACT_APP_OPENAI_API_KEY;
-    const openai = new OpenAI(openAI_key);
 
     return (
         <div className="openAIform">
@@ -102,6 +108,7 @@ const OpenAIPlayground = () => {
             <div className="openAIresponse">
                 <p>{text + ' ... ' + prediction}</p>
             </div>
+            {/* create a button that encrypts the openai api key */}
         </div>
     );
 };
