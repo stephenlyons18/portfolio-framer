@@ -4,6 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
+.prettierrc
+package.json
+test.html
+tsconfig.json
+yarn.lock
+/public
+/src
 
 #api keys
 .env
