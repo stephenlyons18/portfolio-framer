@@ -17,6 +17,16 @@
     min-height: 100vh;
     width: 100%;
 }
+.ulStyle {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+}
 .projectsContainer {
     display: flex;
     flex-wrap: wrap;
