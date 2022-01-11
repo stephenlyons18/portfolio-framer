@@ -19,27 +19,31 @@ function App() {
     let navigate = useNavigate();
 
     function swipeLeft(eventData) {
-        if (currentPage === 0) {
-            setCurrentPage(2);
-            console.log('swiped left');
-        } else if (currentPage === 1) {
-            setCurrentPage(0);
-        } else if (currentPage === 2) {
-            setCurrentPage(1);
+        if (eventData.deltaX > 250) {
+            if (currentPage === 0) {
+                setCurrentPage(2);
+                console.log('swiped left');
+            } else if (currentPage === 1) {
+                setCurrentPage(0);
+            } else if (currentPage === 2) {
+                setCurrentPage(1);
+            }
+            handleSwipe(eventData);
         }
-        handleSwipe(eventData);
     }
     function swipeRight(eventData) {
-        if (currentPage === 0) {
-            setCurrentPage(1);
-            console.log('swiped right');
-        } else if (currentPage === 1) {
-            setCurrentPage(2);
-        } else if (currentPage === 2) {
-            setCurrentPage(0);
-            console.log('swiped right');
+        if (eventData.deltaX > 250) {
+            if (currentPage === 0) {
+                setCurrentPage(1);
+                console.log('swiped right');
+            } else if (currentPage === 1) {
+                setCurrentPage(2);
+            } else if (currentPage === 2) {
+                setCurrentPage(0);
+                console.log('swiped right');
+            }
+            handleSwipe(eventData);
         }
-        handleSwipe(eventData);
     }
     //use a listener to handle navigation based on which page is currently active
     const handleSwipe = (e) => {

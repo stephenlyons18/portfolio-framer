@@ -20,12 +20,12 @@ const About = () => {
                     <h1>About Me</h1>
                     <p>
                         I am a full stack web developer with a passion for
-                        learning anr problem solving. I have a background in web
+                        learning and problem solving. I have a background in web
                         development and have worked with many different
                         frameworks and languages. I am also interested in Cyber
                         Security and Artificial Intellegence. Currently, I am
                         helping develop a social media application centered
-                        around events.
+                        around events and hangouts.
                     </p>
                     <hr />
                     <h1>Hobbies</h1>
@@ -94,7 +94,7 @@ const About = () => {
                             </a>
                         </li>
                         <li>
-                            Software Engineer and Security Analyst at{' '}
+                            Software Security Engineer at{' '}
                             <a
                                 href="https://joindown.com/"
                                 target="_blank"
@@ -136,7 +136,6 @@ const About = () => {
                             </a>
                         </li>
                     </ul>
-                    
                 </motion.div>
                 <motion.div className="aboutImages">
                     <motion.img

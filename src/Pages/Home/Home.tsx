@@ -6,6 +6,7 @@ import OpenAIPlayground from '../../components/TextPredict/OpenAIPlayground';
 import WelcomePitcure from '../../assets/images/grad-photo.jpg';
 import CSULBLogo from '../../assets/images/csulb-logo.png';
 import * as viewport from 'react-in-viewport';
+import { Document, Page } from 'react-pdf';
 import { useState } from 'react';
 
 // import IntroCards from '../../components/IntroCard/IntroCards';
@@ -15,6 +16,7 @@ import { useState } from 'react';
 export default function Home() {
     //use react-in-viewport to make the the picture fade in when it is in view
     const [isInViewport, setIsInViewport] = useState(false);
+    const [resumeOpen, setResumeOpen] = useState(false);
     const Block = (props: { inViewport: boolean }) => {
         return (
             <div className="csulbContainer">
@@ -48,16 +50,39 @@ export default function Home() {
                         </li>
                     </ul>
                 </div>
-
-                <motion.a
-                    variants={reusmeVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                    href={require('../../assets/files/stephen-lyons-resume.pdf')}
-                    download="stephen-lyons-resume"
-                >
-                    <button className="resumeButton">Download Resume</button>
-                </motion.a>
+                <div>
+                    {/* create a button to view resume */}
+                    <button
+                        onClick={() => setResumeOpen(!resumeOpen)}
+                        className="resumeButton"
+                    >
+                        View Resume
+                    </button>
+                    <motion.a
+                        variants={reusmeVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                        href={require('../../assets/files/stephen-lyons-resume.pdf')}
+                        download="stephen-lyons-resume"
+                    >
+                        <button className="resumeButton">
+                            Download Resume
+                        </button>
+                    </motion.a>
+                </div>
+                {resumeOpen && (
+                    <motion.div
+                        transition={{
+                            type: 'spring',
+                            stiffness: 60,
+                            damping: 60,
+                        }}
+                    >
+                        <Document file="../../assets/files/stephen-lyons-resume.pdf">
+                            <Page pageNumber={1} />
+                        </Document>
+                    </motion.div>
+                )}
             </div>
         );
     };
@@ -85,6 +110,7 @@ export default function Home() {
                     variants={IntroPictureVariants}
                     initial="initial"
                     animate="visible"
+                    whileTap="tap"
                     whileHover="hover"
                     drag="x"
                     dragConstraints={{ left: 60, right: 60 }}
@@ -131,6 +157,10 @@ const IntroPictureVariants = {
     hover: {
         scale: 1.1,
         cursor: 'grab',
+    },
+    tap: {
+        scale: 0.9,
+        cursor: 'grabbing',
     },
 };
 const logoVariants = {
