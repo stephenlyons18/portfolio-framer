@@ -1,7 +1,7 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-import './WelcomeText.scss';
+import './WelcomeText.css';
 const WelcomeText = () => {
     return (
         <div className="welcomeTextContainer">

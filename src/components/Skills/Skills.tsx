@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Skills.scss';
+import './Skills.css';
 export const Skills = () => {
     return (
         <motion.div

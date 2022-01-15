@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import './HomeStyles.scss';
+import './HomeStyles.css';
 import WelcomeText from '../../components/WelcomeText/WelcomeText';
 import OpenAIPlayground from '../../components/TextPredict/OpenAIPlayground';
 import WelcomePitcure from '../../assets/images/grad-photo.jpg';
@@ -127,12 +127,7 @@ export default function Home() {
 
             <OpenAIPlayground />
 
-            {/* <motion.div className="introCards" drag>
-                <IntroCard height={randomHeight()} />
-                <IntroCard height={randomHeight()} />
-                <IntroCard height={randomHeight()} />
-                <IntroCard height={randomHeight()} />
-            </motion.div> */}
+            
         </motion.div>
     );
 }

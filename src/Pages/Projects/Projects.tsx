@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion, AnimateSharedLayout, Reorder } from 'framer-motion';
+import { motion, Reorder } from 'framer-motion';
 import { ProjectItems } from './ProjectItems';
-import './ProjectStyles.scss';
+import './ProjectStyles.css';
 
 function Projects(props) {
     const [items, setItems] = useState(ProjectItems);

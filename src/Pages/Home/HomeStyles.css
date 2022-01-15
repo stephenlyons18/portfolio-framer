@@ -31,7 +31,7 @@
     border-radius: 25px;
     opacity: 0.75;
 }
-// animate in the
+
 .welcomeContainer {
     display: flex;
     flex-direction: row;
@@ -90,10 +90,7 @@
     border: 1px solid #5aff15;
     text-decoration: none;
     transition: all 0.4s ease;
-    &:hover {
-        background-color: #5aff15;
-        color: black;
-    }
+    
 }
 
 hr {

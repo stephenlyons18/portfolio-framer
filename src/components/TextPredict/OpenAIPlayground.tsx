@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './OpenAIPlayground.scss';
+import './OpenAIPlayground.css';
 import { CaretRight } from 'phosphor-react';
-import AES from 'crypto-js/sha256';
+
 import { something } from './openai';
 const OpenAIPlayground = () => {
     const [text, setText] = useState('The quick brown fox jumped');

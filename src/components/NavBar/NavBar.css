@@ -26,10 +26,6 @@
     padding: 10px;
     text-decoration: none;
     transition: all 0.4s ease;
-    &:hover {
-        background-color: #5aff15;
-        color: black;
-    }
 }
 .noDecor {
     text-decoration: none;
@@ -49,11 +45,7 @@
     transition: all 0.2s ease;
     fill: #5aff15;
     color: #5aff15;
-    &:hover {
-        fill: black;
-        color: black;
-        background-color: white;
-    }
+    
 }
 .socials {
     display: flex;

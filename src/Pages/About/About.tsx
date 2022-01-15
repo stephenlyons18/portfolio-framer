@@ -3,7 +3,7 @@ import stephen from '../../assets/images/grad-photo.jpg';
 import stephen2 from '../../assets/images/snow-picture.jpg';
 import { motion } from 'framer-motion';
 import { Skills } from '../../components/Skills/Skills';
-import './AboutStyles.scss';
+import './AboutStyles.css';
 const About = () => {
     return (
         <motion.div

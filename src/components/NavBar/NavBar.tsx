@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.scss';
+import './NavBar.css';
 import { Chat, LinkedinLogo, GithubLogo, List } from 'phosphor-react';
 
 const NavBar = () => {

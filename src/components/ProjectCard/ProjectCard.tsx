@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './ProjectCard.scss';
+import './ProjectCard.css';
 
 interface Props {
     imgPath: string;
