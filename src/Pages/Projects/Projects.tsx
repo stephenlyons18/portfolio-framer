@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { motion, Reorder } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ProjectItems } from './ProjectItems';
-import './ProjectStyles.css';
 
 function Projects(props) {
-    const [items, setItems] = useState(ProjectItems);
+    const items = ProjectItems;
     const [openItem, setOpenItem] = useState(null);
 
     function checkSelectedAndChange(item) {
@@ -40,90 +39,83 @@ function Projects(props) {
                     },
                 },
             }}
-            style={{
-                width: '100vw',
-                height: 'auto',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}
+            className="flex flex-row items-center justify-center w-full h-full"
         >
-            <Reorder.Group
-                axis="y"
-                values={items}
-                onReorder={setItems}
-                className="ulStyle"
-            >
+            <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+                <div className="shrink-0">
+                    <img
+                        className="h-12 w-12"
+                        src="/img/logo.svg"
+                        alt="ChitChat Logo"
+                    />
+                </div>
+                <div>
+                    <div className="text-xl font-medium text-black">
+                        ChitChat
+                    </div>
+                    <p className="text-slate-500">You have a new message!</p>
+                </div>
+            </div>
+            <motion.div className="grid grid-cols-3 gap-4">
                 {items.map((item) => (
-                    <Reorder.Item key={item.projectID} value={item}>
-                        <motion.div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                            }}
-                            variants={ProjectCardVariants}
-                            onClick={() =>
-                                checkSelectedAndChange(item.projectID)
+                    <motion.div
+                        className="flex items-center justify-center items-center p-1 gap-1"
+                        variants={ProjectCardVariants}
+                        onClick={() => checkSelectedAndChange(item.projectID)}
+                        animate={
+                            openItem === item.projectID ? 'show' : 'hidden'
+                        }
+                        initial="hidden"
+                        key={item.projectID}
+                    >
+                        <motion.img
+                            src={item.imgSrc}
+                            alt={item.projectTitle}
+                            whileHover={
+                                openItem === item.projectID
+                                    ? { scale: 1.3 }
+                                    : {}
                             }
                             animate={
                                 openItem === item.projectID ? 'show' : 'hidden'
                             }
                             initial="hidden"
-                        >
-                            <motion.img
-                                src={item.imgSrc}
-                                alt={item.projectTitle}
-                                whileHover={
-                                    openItem === item.projectID
-                                        ? { scale: 1.3 }
-                                        : {}
-                                }
-                                animate={
-                                    openItem === item.projectID
-                                        ? 'show'
-                                        : 'hidden'
-                                }
-                                initial="hidden"
-                                variants={ImageVariants}
-                            />
-                            <h1>{item.projectTitle}</h1>
-                            {openItem === item.projectID && (
-                                <div className="project-text">
-                                    <h2>Description</h2>
-                                    <motion.p
-                                    // variants={projectTextVariants}
-                                    // initial="closed"
-                                    // animate={
-                                    //     openItem === item.projectID
-                                    //         ? 'open'
-                                    //         : 'closed'
-                                    // }
-                                    >
-                                        {item.description}
-                                    </motion.p>
-                                    <h2>Technologies</h2>
-                                    <motion.ul
-                                        variants={motionULVariants}
-                                        initial="closed"
-                                        animate={
-                                            openItem === item.projectID
-                                                ? 'open'
-                                                : 'closed'
-                                        }
-                                    >
-                                        {item.techStack.map((tech) => (
-                                            <li key={tech}>{tech}</li>
-                                        ))}
-                                    </motion.ul>
-                                </div>
-                            )}
-                        </motion.div>
-                    </Reorder.Item>
+                            variants={ImageVariants}
+                        />
+                        <h1>{item.projectTitle}</h1>
+                        {openItem === item.projectID && (
+                            <div className="text-base">
+                                <h2>Description</h2>
+                                <motion.p
+                                // variants={projectTextVariants}
+                                // initial="closed"
+                                // animate={
+                                //     openItem === item.projectID
+                                //         ? 'open'
+                                //         : 'closed'
+                                // }
+                                >
+                                    {item.description}
+                                </motion.p>
+                                <h2>Technologies</h2>
+                                <motion.ul
+                                    variants={motionULVariants}
+                                    initial="closed"
+                                    animate={
+                                        openItem === item.projectID
+                                            ? 'open'
+                                            : 'closed'
+                                    }
+                                >
+                                    {item.techStack.map((tech) => (
+                                        <li key={tech}>{tech}</li>
+                                    ))}
+                                </motion.ul>
+                            </div>
+                        )}
+                    </motion.div>
                 ))}
-            </Reorder.Group>
+            </motion.div>
         </motion.div>
     );
 }
@@ -131,13 +123,8 @@ function Projects(props) {
 const ProjectCardVariants = {
     hidden: {
         backgroundColor: '#33658a',
-        height: 'auto',
         borderRadius: '20px',
-        width: '80%',
-        marginTop: '20px',
-        marginBottom: '20px',
-        padding: '20px',
-
+        width: '30%',
         transition: {
             type: 'spring',
             stiffness: 100,
@@ -145,11 +132,11 @@ const ProjectCardVariants = {
         },
     },
     show: {
-        scale: 1.1,
+        width: '80%',
         marginBottom: '200px',
         marginTop: '200px',
         backgroundColor: '#86bbd8',
-        padding: '20px',
+        borderRadius: '20px',
     },
 };
 const motionULVariants = {

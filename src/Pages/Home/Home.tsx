@@ -126,8 +126,6 @@ export default function Home() {
             <h1>OpenAI Demonstration</h1>
 
             <OpenAIPlayground />
-
-            
         </motion.div>
     );
 }
