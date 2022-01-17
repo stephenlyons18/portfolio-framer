@@ -56,10 +56,10 @@ function Projects(props) {
                     <p className="text-slate-500">You have a new message!</p>
                 </div>
             </div>
-            <motion.div className="grid grid-cols-3 gap-4">
+            <motion.div className="grid grid-flow-col auto-cols-max">
                 {items.map((item) => (
                     <motion.div
-                        className="flex items-center justify-center items-center p-1 gap-1"
+                        className="flex flex-col items-center justify-center items-center p-1 gap-1"
                         variants={ProjectCardVariants}
                         onClick={() => checkSelectedAndChange(item.projectID)}
                         animate={
@@ -125,6 +125,7 @@ const ProjectCardVariants = {
         backgroundColor: '#33658a',
         borderRadius: '20px',
         width: '30%',
+        height: '200px',
         transition: {
             type: 'spring',
             stiffness: 100,
@@ -133,6 +134,7 @@ const ProjectCardVariants = {
     },
     show: {
         width: '80%',
+        height: 'auto',
         marginBottom: '200px',
         marginTop: '200px',
         backgroundColor: '#86bbd8',
