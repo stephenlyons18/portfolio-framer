@@ -49,13 +49,7 @@
     border-radius: 25px;
     opacity: 0.85;
 }
-.csulbText {
-    width: 80%;
-    height: 20%;
-    border-radius: 25px;
-    opacity: 0.9;
-    text-align: right;
-}
+
 .csulbText ul {
     direction: rtl;
 }
@@ -70,13 +64,7 @@
     margin-bottom: 3%;
     border-radius: 25px;
 }
-.csulbLogo {
-    width: 20%;
-    height: 20%;
-    border-radius: 25px;
-    opacity: 0.95;
-    background-color: #fff;
-}
+
 
 .resumeButton {
     color: #fff;
@@ -84,7 +72,7 @@
     width: 100%;
     padding: 10px;
     margin: 10px;
-    width: 80%;
+    
     border-radius: 5px;
     background: none;
     border: 1px solid #5aff15;

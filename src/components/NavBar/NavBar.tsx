@@ -100,7 +100,7 @@ const NavBar = () => {
                             }}
                             animate={isMobileOpen}
                             initial="closed"
-                            variants={MenuButtonVariants}
+                            variants={MobileMenuVariants}
                         >
                             <List size={40} style={{ color: '#fff' }} />
                         </motion.div>
@@ -112,7 +112,10 @@ const NavBar = () => {
                     <li>
                         <Link to="/projects" className="noDecor">
                             <motion.div
-                                whileTap={{ scale: 0.9 }}
+                                variants={MenuVariants}
+                                initial="initial"
+                                animate="animate"
+                                whileTap="tap"
                                 className="NavLinkStyle"
                             >
                                 <h5 style={{ margin: '0px' }}>PROJECTS</h5>
@@ -136,7 +139,24 @@ const NavBar = () => {
         </>
     );
 };
-const MenuButtonVariants = {
+const MenuVariants = {
+    initial: {
+        opacity: 0,
+        x: '-100vw',
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+    },
+    hover: {
+        x: 0,
+    },
+    pressed: {
+        x: '-100vw',
+    },
+};
+
+const MobileMenuVariants = {
     open: {
         width: '80%',
         height: 'auto',

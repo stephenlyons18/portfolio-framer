@@ -61,55 +61,62 @@ const OpenAIPlayground = () => {
     // };
 
     return (
-        <div className="openAIform">
-            <p>
-                I was recently granted access to the OpenAI beta's for GPT-3 and
-                Copilot. Below is a demonstration of what this library is
-                capable of.
-            </p>
-            <p>
-                Type in the box and see OpenAI predict the remainder of what you
-                have to say, try some common English phrases like:
-                <ul>
-                    <li> "I think therefore ..."</li>
-                    <li>or "A watched pot ..."</li>
-                </ul>
-            </p>
-            <form onSubmit={handleSubmit} className="openAIform">
-                <label style={{ width: '100%', paddingLeft: '5%' }}>
-                    <p style={{ fontSize: '1.4em' }}>Powered by OpenAI:</p>
-                    <div className="inputContainer">
-                        <CaretRight size={48} className="blink" />
-                        <input
-                            className="openAIinput"
-                            type="text"
-                            value={text}
-                            onChange={(e) => {
-                                setText(e.target.value);
-                                setPrediction('');
-                            }}
-                        />
-                    </div>
-                </label>
-                <input type="submit" value="Submit" className="openAISubmit" />
-            </form>
-            {/* create a slider input to adjust the temperature */}
-            <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={temperature}
-                onChange={(e) => {
-                    setTemperature(Number(e.target.value));
-                }}
-            />
-            <p>Temperature: {temperature}</p>
-            <div className="openAIresponse">
-                <p>{text + ' ... ' + prediction}</p>
+        <>
+            <h1 className="text-5xl">OpenAI Demonstration</h1>
+            <div className="openAIform p-4">
+                <p>
+                    I was recently granted access to the OpenAI beta's for GPT-3
+                    and Copilot. Below is a demonstration of what this library
+                    is capable of.
+                </p>
+                <p>
+                    Type in the box and see OpenAI predict the remainder of what
+                    you have to say, try some common English phrases like:
+                    <ul>
+                        <li> "I think therefore ..."</li>
+                        <li>or "A watched pot ..."</li>
+                    </ul>
+                </p>
+                <form onSubmit={handleSubmit} className="openAIform">
+                    <label style={{ width: '100%', paddingLeft: '5%' }}>
+                        <p style={{ fontSize: '1.4em' }}>Powered by OpenAI:</p>
+                        <div className="inputContainer">
+                            <CaretRight size={48} className="blink" />
+                            <input
+                                className="openAIinput"
+                                type="text"
+                                value={text}
+                                onChange={(e) => {
+                                    setText(e.target.value);
+                                    setPrediction('');
+                                }}
+                            />
+                        </div>
+                    </label>
+                    <input
+                        type="submit"
+                        value="Submit"
+                        className="openAISubmit"
+                    />
+                </form>
+                {/* create a slider input to adjust the temperature */}
+                <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                    value={temperature}
+                    onChange={(e) => {
+                        setTemperature(Number(e.target.value));
+                    }}
+                />
+                <p>Temperature: {temperature}</p>
+                <div className="openAIresponse">
+                    <p>{text + ' ... ' + prediction}</p>
+                </div>
+                {/* create a button that encrypts the openai api key */}
             </div>
-            {/* create a button that encrypts the openai api key */}
-        </div>
+        </>
     );
 };
 

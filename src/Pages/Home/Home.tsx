@@ -19,45 +19,53 @@ export default function Home() {
     const [resumeOpen, setResumeOpen] = useState(false);
     const Block = (props: { inViewport: boolean }) => {
         return (
-            <div className="csulbContainer">
-                <motion.img
-                    className="csulbLogo"
-                    src={CSULBLogo}
-                    variants={logoVariants}
-                    initial="initial"
-                    animate={isInViewport ? 'inView' : 'outOfView'}
-                    id="csulbLogo"
-                    alt="csulb-logo"
-                    drag="y"
-                    dragConstraints={{ top: 60, bottom: 60 }}
-                    dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
-                />
-                <div className="csulbText">
-                    <h1>I currently attend CSULB</h1>
-                    <p>
-                        {' '}
-                        My major is Computer Science and I am a Junior at
-                        California State University, Long Beach.
-                    </p>
-                    <p> I am interested in the following fields:</p>
-                    <ul>
-                        <li> Web Development, and Software Engineering</li>
-                        <li> Cyber Security, and Computer Networking</li>
-                        <li>
+            <div className="flex-row items-center p-6 shadow-lg w-11/12">
+                <div className="flex items-center w-max">
+                    <motion.img
+                        className="w-1/12 bg-white rounded"
+                        src={CSULBLogo}
+                        variants={logoVariants}
+                        initial="initial"
+                        animate={isInViewport ? 'outOfView' : 'inView'}
+                        id="csulbLogo"
+                        alt="csulb-logo"
+                        drag="y"
+                        dragConstraints={{ top: 60, bottom: 60 }}
+                        dragTransition={{
+                            bounceStiffness: 600,
+                            bounceDamping: 10,
+                        }}
+                    />
+                    <div className="flex-row text-right w-auto">
+                        <h1 className="text-5xl font-bold pb-3">
+                            I currently attend CSULB
+                        </h1>
+                        <p>
                             {' '}
-                            Data Science, Machine Learning, and Artificial
-                            Intelligence
-                        </li>
-                    </ul>
+                            My major is Computer Science and I am a Junior at
+                            California State University, Long Beach.
+                        </p>
+                        <p> I am interested in the following fields:</p>
+                        <ul>
+                            <li> Web Development, and Software Engineering</li>
+                            <li> Cyber Security, and Computer Networking</li>
+                            <li>
+                                {' '}
+                                Data Science, Machine Learning, and Artificial
+                                Intelligence
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
                     {/* create a button to view resume */}
-                    <button
+                    <motion.button
                         onClick={() => setResumeOpen(!resumeOpen)}
                         className="resumeButton"
+                        variants={resumeButtonVariants}
                     >
                         View Resume
-                    </button>
+                    </motion.button>
                     <motion.a
                         variants={reusmeVariants}
                         whileHover="hover"
@@ -65,9 +73,12 @@ export default function Home() {
                         href={require('../../assets/files/stephen-lyons-resume.pdf')}
                         download="stephen-lyons-resume"
                     >
-                        <button className="resumeButton">
+                        <motion.button
+                            className="resumeButton"
+                            variants={resumeButtonVariants}
+                        >
                             Download Resume
-                        </button>
+                        </motion.button>
                     </motion.a>
                 </div>
                 {resumeOpen && (
@@ -123,7 +134,6 @@ export default function Home() {
             {/* Create a div about the college, load the CSULB logo from assets and display in a flex container with row format */}
             <ViewportBlock onEnterViewport={animateLogo} />
             <hr />
-            <h1>OpenAI Demonstration</h1>
 
             <OpenAIPlayground />
         </motion.div>
@@ -132,6 +142,32 @@ export default function Home() {
 
 Home.defaultProps = {
     text: 'Tap',
+};
+const resumeButtonVariants = {
+    initial: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: 0.1,
+        },
+    },
+    hover: {
+        scale: 1.1,
+        opacity: 1,
+        backgroundColor: '#5aff15',
+        color: '#000',
+        transition: {
+            duration: 0.05,
+        },
+    },
+    tap: {
+        scale: 0.9,
+        opacity: 0.5,
+        backgroundColor: '#5aff15',
+        transition: {
+            duration: 0.05,
+        },
+    },
 };
 const IntroPictureVariants = {
     initial: {
@@ -159,15 +195,17 @@ const IntroPictureVariants = {
 const logoVariants = {
     inView: {
         opacity: 1,
+
         transition: {
-            delay: 1,
+            delay: 5,
             duration: 1,
         },
     },
     outOfView: {
         opacity: 0,
+
         transition: {
-            delay: 1,
+            delay: 5,
             duration: 1,
         },
     },
