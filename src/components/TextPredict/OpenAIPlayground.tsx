@@ -61,8 +61,8 @@ const OpenAIPlayground = () => {
     // };
 
     return (
-        <>
-            <h1 className="text-5xl">OpenAI Demonstration</h1>
+        <div className="flex flex-col items-center p-6 w-11/12">
+            <h1 className="text-3xl sm:text-5xl">OpenAI Demonstration</h1>
             <div className="openAIform p-4">
                 <p>
                     I was recently granted access to the OpenAI beta's for GPT-3
@@ -116,7 +116,7 @@ const OpenAIPlayground = () => {
                 </div>
                 {/* create a button that encrypts the openai api key */}
             </div>
-        </>
+        </div>
     );
 };
 

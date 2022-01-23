@@ -19,10 +19,10 @@ export default function Home() {
     const [resumeOpen, setResumeOpen] = useState(false);
     const Block = (props: { inViewport: boolean }) => {
         return (
-            <div className="flex-row items-center p-6 shadow-lg w-11/12">
-                <div className="flex items-center w-max">
+            <div className="flex flex-col items-center p-6 shadow-lg w-11/12">
+                <div className="flex flex-col sm:flex-row items-center">
                     <motion.img
-                        className="w-1/12 bg-white rounded"
+                        className="w-full sm:w-1/4 m-10 bg-white rounded-lg"
                         src={CSULBLogo}
                         variants={logoVariants}
                         initial="initial"
@@ -36,12 +36,11 @@ export default function Home() {
                             bounceDamping: 10,
                         }}
                     />
-                    <div className="flex-row text-right w-auto">
-                        <h1 className="text-5xl font-bold pb-3">
+                    <div className="flex flex-col text-right">
+                        <h1 className="text-2xl font-bold pb-3 sm:text-5xl">
                             I currently attend CSULB
                         </h1>
                         <p>
-                            {' '}
                             My major is Computer Science and I am a Junior at
                             California State University, Long Beach.
                         </p>
@@ -50,14 +49,13 @@ export default function Home() {
                             <li> Web Development, and Software Engineering</li>
                             <li> Cyber Security, and Computer Networking</li>
                             <li>
-                                {' '}
                                 Data Science, Machine Learning, and Artificial
                                 Intelligence
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div>
+                <div className="flex flex-col">
                     {/* create a button to view resume */}
                     <motion.button
                         onClick={() => setResumeOpen(!resumeOpen)}
@@ -111,12 +109,12 @@ export default function Home() {
             animate="visible"
             exit="exit"
         >
-            <div className="welcomeContainer">
+            <div className="flex flex-col items-center p-6 shadow-lg w-11/12">
                 <WelcomeText />
 
                 <motion.img
                     src={WelcomePitcure}
-                    className="welcomePicture"
+                    className="w-full sm:w-1/4 m-10 rounded-lg"
                     alt="welcome"
                     variants={IntroPictureVariants}
                     initial="initial"

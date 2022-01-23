@@ -13,11 +13,13 @@ const About = () => {
             initial="hidden"
             animate="visible"
         >
-            <h1 className="skillsHeader">Skills</h1>
+            
             <Skills />
             <motion.div className="aboutContent">
                 <motion.div className="aboutText">
-                    <h1>About Me</h1>
+                    <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">
+                        About Me
+                    </h1>
                     <p>
                         I am a full stack web developer with a passion for
                         learning and problem solving. I have a background in web
@@ -28,7 +30,9 @@ const About = () => {
                         around events and hangouts.
                     </p>
                     <hr />
-                    <h1>Hobbies</h1>
+                    <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">
+                        Hobbies
+                    </h1>
                     <ul>
                         <li>Skiing</li>
                         <li>Hiking</li>
@@ -38,7 +42,9 @@ const About = () => {
                         <li>Web Development and Game Development</li>
                     </ul>
                     <hr />
-                    <h1>Relevant Courses</h1>
+                    <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">
+                        Relevant Courses
+                    </h1>
                     <ul>
                         <li>Cyber Security</li>
                         <li>Algorithms</li>
@@ -50,13 +56,16 @@ const About = () => {
                         <li>Software Engineering</li>
                     </ul>
                     <hr />
-                    <h1>Clubs and Activities</h1>
+                    <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">
+                        Clubs and Activities
+                    </h1>
                     <ul>
                         <li>
                             <a
                                 href="https://csulbsnowteam.weebly.com/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 CSULB Snow
                             </a>
@@ -66,6 +75,7 @@ const About = () => {
                                 href="https://csulb.acm.org/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 CSULB Assosciation of Computing Machinery
                             </a>
@@ -75,13 +85,16 @@ const About = () => {
                                 href="https://www.instagram.com/csulbjiujitsu/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 CSULB Jiu Jitsu
                             </a>
                         </li>
                     </ul>
                     <hr />
-                    <h1>Professional Experience</h1>
+                    <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">
+                        Professional Experience
+                    </h1>
                     <ul>
                         <li>
                             Web Developer at{' '}
@@ -89,6 +102,7 @@ const About = () => {
                                 href="https://www.asicsulb.org/corporate/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 CSULB ASI
                             </a>
@@ -99,6 +113,7 @@ const About = () => {
                                 href="https://joindown.com/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 Down Friend Groups
                             </a>
@@ -109,19 +124,23 @@ const About = () => {
                                 href="https://www.about.pangea.app/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 Pangea.app
                             </a>
                         </li>
                     </ul>
                     <hr />
-                    <h1>Education</h1>
+                    <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">
+                        Education
+                    </h1>
                     <ul>
                         <li>
                             <a
                                 href="https://www.csulb.edu/"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 CSULB
                             </a>
@@ -131,6 +150,7 @@ const About = () => {
                                 href="https://www.bohs.bousd.us"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="p-1 hover:text-slate-900 hover:bg-slate-100 ease-in-out duration-500"
                             >
                                 Brea Olinda High School
                             </a>
@@ -192,6 +212,17 @@ const aboutContainerVariants = {
         transition: { duration: 1 },
     },
     exit: { x: '100vw', transition: { ease: 'easeInOut' } },
+};
+const linkVariants = {
+    hover: {
+        scale: 1.1,
+        cursor: 'grab',
+        backroundColor: 'bg-neutral-300',
+    },
+    tap: {
+        scale: 1,
+        cursor: 'grabbing',
+    },
 };
 
 export default About;

@@ -3,29 +3,32 @@ import { motion } from 'framer-motion';
 import './Skills.css';
 export const Skills = () => {
     return (
-        <motion.div
-            className="skillsContainer"
-            variants={containerVariants}
-            initial="closed"
-            animate="show"
-            exit="exit"
-        >
-            {skills.map((skill) => {
-                return (
-                    <motion.div key={skill.skill}>
-                        <motion.h3 className="skillText">
-                            {skill.skill} : {skill.level}%
-                        </motion.h3>
+        <>
+            <h1 className="text-2xl font-bold pb-3 pt-3 sm:text-5xl">Skills</h1>
+            <motion.div
+                className="skillsContainer"
+                variants={containerVariants}
+                initial="closed"
+                animate="show"
+                exit="exit"
+            >
+                {skills.map((skill) => {
+                    return (
+                        <motion.div key={skill.skill}>
+                            <motion.h3 className="skillText">
+                                {skill.skill} : {skill.level}%
+                            </motion.h3>
 
-                        <motion.div
-                            className="skillsBar"
-                            variants={skillVariants}
-                            custom={skill}
-                        />
-                    </motion.div>
-                );
-            })}
-        </motion.div>
+                            <motion.div
+                                className="skillsBar"
+                                variants={skillVariants}
+                                custom={skill}
+                            />
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
+        </>
     );
 };
 const skills = [
