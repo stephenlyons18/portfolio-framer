@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.21b52928.css",
-    "main.js": "/static/js/main.2156e1d1.js",
+    "main.css": "/static/css/main.6b2bc12b.css",
+    "main.js": "/static/js/main.428b558c.js",
     "static/js/787.9b9c0edf.chunk.js": "/static/js/787.9b9c0edf.chunk.js",
     "static/media/asicsulb.png": "/static/media/asicsulb.498b8f41ab83cfff4fd4.png",
     "static/media/snow-picture.jpg": "/static/media/snow-picture.41a5b203c3d381a82681.jpg",
@@ -10,12 +10,12 @@
     "static/media/grad-photo.jpg": "/static/media/grad-photo.2e3bf61a091e6a51f665.jpg",
     "static/media/stephen-lyons-resume.pdf": "/static/media/stephen-lyons-resume.af0a38f57ae9fe9d5fea.pdf",
     "index.html": "/index.html",
-    "main.21b52928.css.map": "/static/css/main.21b52928.css.map",
-    "main.2156e1d1.js.map": "/static/js/main.2156e1d1.js.map",
+    "main.6b2bc12b.css.map": "/static/css/main.6b2bc12b.css.map",
+    "main.428b558c.js.map": "/static/js/main.428b558c.js.map",
     "787.9b9c0edf.chunk.js.map": "/static/js/787.9b9c0edf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.21b52928.css",
-    "static/js/main.2156e1d1.js"
+    "static/css/main.6b2bc12b.css",
+    "static/js/main.428b558c.js"
   ]
 }
