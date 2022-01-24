@@ -49,16 +49,16 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
         }
     }
     function swipeLeft(eventData) {
-        if (eventData.deltaX > 100) {
+        if (eventData.deltaX < -100) {
             if (currentPage === 0) {
-                setCurrentPage(2);
                 navigate('/about');
+                setCurrentPage(2);
             } else if (currentPage === 1) {
-                setCurrentPage(0);
                 navigate('/');
+                setCurrentPage(0);
             } else if (currentPage === 2) {
-                setCurrentPage(1);
                 navigate('/projects');
+                setCurrentPage(1);
             }
         }
     }
@@ -138,54 +138,47 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
                 </div>
                 <div {...handlers}>
                     <motion.div className="grid grid-cols-3 text-white g-2">
-                        <motion.p>Home</motion.p>
-                        <motion.p>Projects</motion.p>
-                        <motion.p>About</motion.p>
+                        <motion.p
+                            variants={SwipeNavVariants}
+                            initial="hidden"
+                            animate={currentPage === 0 ? 'open' : 'closed'}
+                        >
+                            Home
+                        </motion.p>
+                        <motion.p
+                            variants={SwipeNavVariants}
+                            initial="hidden"
+                            animate={currentPage === 1 ? 'open' : 'closed'}
+                        >
+                            Projects
+                        </motion.p>
+                        <motion.p
+                            variants={SwipeNavVariants}
+                            initial="hidden"
+                            animate={currentPage === 2 ? 'open' : 'closed'}
+                        >
+                            About
+                        </motion.p>
                     </motion.div>
                 </div>
             </div>
         </>
     );
 };
-const MenuVariants = {
-    initial: {
-        opacity: 0,
-        x: '-100vw',
-    },
-    animate: {
-        opacity: 1,
-        x: 0,
-    },
-    hover: {
-        x: 0,
-    },
-    pressed: {
-        x: '-100vw',
-    },
-};
 
-const MobileMenuVariants = {
+const SwipeNavVariants = {
     open: {
-        width: '80%',
-        height: 'auto',
-        background: '#434343',
-
+        backgroundColor: '#fff',
         transition: {
-            spring: {
-                stiffness: 100,
-                damping: 10,
-            },
+            duration: 0.5,
+            ease: 'easeInOut',
         },
     },
     closed: {
-        height: '0',
-        width: '0',
-        background: '#000',
+        backgroundColor: '#000',
         transition: {
-            spring: {
-                stiffness: 100,
-                damping: 10,
-            },
+            duration: 0.5,
+            ease: 'easeInOut',
         },
     },
 };

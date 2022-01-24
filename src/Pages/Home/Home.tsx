@@ -114,7 +114,7 @@ export default function Home() {
 
                 <motion.img
                     src={WelcomePitcure}
-                    className="w-full sm:w-1/4 m-10 rounded-lg"
+                    className="sm:w-1/4 m-10 rounded-lg"
                     alt="welcome"
                     variants={IntroPictureVariants}
                     initial="initial"

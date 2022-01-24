@@ -11,14 +11,25 @@ import { useState } from 'react';
 function App() {
     //const [ContactToggle, setContactToggle] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
 
+    //create a window resize listener
+    window.addEventListener('resize', () => {
+        setTimeout(() => {
+            if (window.innerWidth < 500) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        }, 1000);
+    });
     return (
         <>
             <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <AnimatePresence exitBeforeEnter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects" element={<Projects isMobile={isMobile}/>} />
                     <Route path="/about" element={<About />} />
                 </Routes>
             </AnimatePresence>

@@ -13,7 +13,6 @@ const About = () => {
             initial="hidden"
             animate="visible"
         >
-            
             <Skills />
             <motion.div className="aboutContent">
                 <motion.div className="aboutText">
@@ -48,11 +47,13 @@ const About = () => {
                     <ul>
                         <li>Cyber Security</li>
                         <li>Algorithms</li>
+                        <li>Network Security</li>
                         <li>BlockChain Technologies (UC Berkeley)</li>
                         <li>Data Structures</li>
-                        <li>C++</li>
-                        <li>Object Oriented Programming (Java)</li>
                         <li>Python</li>
+                        <li>Object Oriented Programming (Java)</li>
+                        <li>Computer Science Theory</li>
+                        <li>C++</li>
                         <li>Software Engineering</li>
                     </ul>
                     <hr />

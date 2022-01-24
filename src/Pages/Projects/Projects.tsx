@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ProjectItems } from './ProjectItems';
 
-function Projects(props) {
+interface ProjectItemsProps {
+    isMobile: boolean;
+}
+
+const Projects: React.FC<ProjectItemsProps> = ({ isMobile }) => {
     const items = ProjectItems;
     const [openItem, setOpenItem] = useState(null);
 
@@ -39,9 +43,9 @@ function Projects(props) {
                     },
                 },
             }}
-            className="flex flex-row items-center justify-center w-full h-full"
+            className="flex flex-col items-center justify-center"
         >
-            <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+            {/* <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
                 <div className="shrink-0">
                     <img
                         className="h-12 w-12"
@@ -55,12 +59,16 @@ function Projects(props) {
                     </div>
                     <p className="text-slate-500">You have a new message!</p>
                 </div>
-            </div>
-            <motion.div className="grid grid-flow-col auto-cols-max">
+            </div> */}
+            <motion.div className="grid grid-cols-1 sm:grid-cols-3 items-center justify-center">
                 {items.map((item) => (
                     <motion.div
                         className="flex flex-col items-center justify-center items-center p-1 gap-1"
-                        variants={ProjectCardVariants}
+                        variants={
+                            isMobile
+                                ? mobileProjectCardVariants // if mobile, use mobileProjectCardVariants
+                                : ProjectCardVariants // if not, use projectCardVariants
+                        }
                         onClick={() => checkSelectedAndChange(item.projectID)}
                         animate={
                             openItem === item.projectID ? 'show' : 'hidden'
@@ -118,7 +126,7 @@ function Projects(props) {
             </motion.div>
         </motion.div>
     );
-}
+};
 
 const ProjectCardVariants = {
     hidden: {
@@ -139,6 +147,28 @@ const ProjectCardVariants = {
         marginTop: '200px',
         backgroundColor: '#86bbd8',
         borderRadius: '20px',
+    },
+};
+
+const mobileProjectCardVariants = {
+    hidden: {
+        backgroundColor: '#33658a',
+        borderRadius: '20px',
+        width: '70%',
+        height: '200px',
+        transition: {
+            type: 'spring',
+            stiffness: 100,
+            damping: 15,
+        },
+        show: {
+            width: '80%',
+            height: 'auto',
+            marginBottom: '200px',
+            marginTop: '200px',
+            backgroundColor: '#86bbd8',
+            borderRadius: '20px',
+        },
     },
 };
 const motionULVariants = {
