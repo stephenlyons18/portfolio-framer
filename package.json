@@ -21,6 +21,7 @@
         "@types/react-swipeable": "^5.2.0",
         "@types/tailwindcss": "^3.0.2",
         "autoprefixer": "^10.4.2",
+        "body-scroll-lock": "^4.0.0-beta.0",
         "crypto-js": "^4.1.1",
         "framer-motion": "^5.5.5",
         "gh-pages": "^3.2.3",
