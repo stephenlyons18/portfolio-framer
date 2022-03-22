@@ -6,6 +6,7 @@ import Projects from './Pages/Projects/Projects';
 import About from './Pages/About/About';
 import { AnimatePresence } from 'framer-motion';
 import NavBar from './components/NavBar/NavBar';
+import MobileNav from './components/NavBar/MobileNav';
 import { useState } from 'react';
 
 function App() {
@@ -25,14 +26,29 @@ function App() {
     });
     return (
         <>
-            <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            {!isMobile ? (
+                <NavBar
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                />
+            ) : null}
+            <MobileNav />
             <AnimatePresence exitBeforeEnter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects isMobile={isMobile}/>} />
+                    <Route
+                        path="/projects"
+                        element={<Projects isMobile={isMobile} />}
+                    />
                     <Route path="/about" element={<About />} />
                 </Routes>
             </AnimatePresence>
+            {isMobile ? (
+                <NavBar
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                />
+            ) : null}
         </>
     );
 }

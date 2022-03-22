@@ -46,7 +46,9 @@ export default function Home() {
                         </p>
                         <p> I am interested in the following fields:</p>
                         <ul>
-                            <li> Web Development, and Software Engineering</li>
+                            <li> Software Engineering</li>
+                            <li> Machine Learning</li>
+                            <li> Web Development</li>
                             <li> Cyber Security, and Computer Networking</li>
                             <li>
                                 Data Science, Machine Learning, and Artificial

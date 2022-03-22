@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { Chat, LinkedinLogo, GithubLogo, List } from 'phosphor-react';
-import { useSwipeable } from 'react-swipeable';
+import { SwipeEventData, useSwipeable } from 'react-swipeable';
 import { useNavigate } from 'react-router-dom';
 
 interface NavBarProps {
@@ -34,8 +34,8 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
     });
     let navigate = useNavigate();
 
-    function swipeRight(eventData) {
-        if (eventData.deltaX > 100) {
+    function swipeRight(eventData: SwipeEventData) {
+        if (eventData.deltaX > 50) {
             if (currentPage === 0) {
                 navigate('/projects');
                 setCurrentPage(1);
@@ -48,7 +48,7 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
             }
         }
     }
-    function swipeLeft(eventData) {
+    function swipeLeft(eventData: SwipeEventData) {
         if (eventData.deltaX < -100) {
             if (currentPage === 0) {
                 navigate('/about');
@@ -64,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
     }
 
     return !isMobile ? (
-        <nav>
+        <nav className="sticky bottom-0">
             <div className="NavContainerStyle">
                 <div style={{ color: 'white', marginLeft: '40px' }}>
                     <Link to="/" className="noDecor">
@@ -137,28 +137,31 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
                     </Link>
                 </div>
                 <div {...handlers}>
-                    <motion.div className="grid grid-cols-3 text-white g-2">
-                        <motion.p
-                            variants={SwipeNavVariants}
-                            initial="hidden"
-                            animate={currentPage === 0 ? 'open' : 'closed'}
-                        >
-                            Home
-                        </motion.p>
-                        <motion.p
-                            variants={SwipeNavVariants}
-                            initial="hidden"
-                            animate={currentPage === 1 ? 'open' : 'closed'}
-                        >
-                            Projects
-                        </motion.p>
-                        <motion.p
-                            variants={SwipeNavVariants}
-                            initial="hidden"
-                            animate={currentPage === 2 ? 'open' : 'closed'}
-                        >
-                            About
-                        </motion.p>
+                    <motion.div className="grid grid-cols-3 grid-rows-2 text-white g-2">
+                        <>
+                            <motion.p
+                                variants={SwipeNavVariants}
+                                initial="hidden"
+                                animate={currentPage === 0 ? 'open' : 'closed'}
+                            >
+                                Home
+                            </motion.p>
+                            <motion.p
+                                variants={SwipeNavVariants}
+                                initial="hidden"
+                                animate={currentPage === 1 ? 'open' : 'closed'}
+                            >
+                                Projects
+                            </motion.p>
+                            <motion.p
+                                variants={SwipeNavVariants}
+                                initial="hidden"
+                                animate={currentPage === 2 ? 'open' : 'closed'}
+                            >
+                                About
+                            </motion.p>
+                        </>
+                        <div></div>
                     </motion.div>
                 </div>
             </div>
