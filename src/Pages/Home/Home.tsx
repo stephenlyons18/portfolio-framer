@@ -134,8 +134,6 @@ export default function Home() {
             {/* Create a div about the college, load the CSULB logo from assets and display in a flex container with row format */}
             <ViewportBlock onEnterViewport={animateLogo} />
             <hr />
-
-            <OpenAIPlayground />
         </motion.div>
     );
 }

@@ -11,9 +11,17 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
+import './MobileNav.css';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Projects', 'About', 'Contact', 'Github'];
+const settings = ['Projects', 'About', 'Contact', 'Github'];
+const usls = [
+    '/Projects',
+    '/About',
+    'mailto:stephen.lyons18@gmail.com',
+    'https://github.com/stephenlyons18',
+];
 
 const MobileNav = () => {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -39,9 +47,9 @@ const MobileNav = () => {
     };
 
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <AppBar position="static" className="bg-black forceBlack">
+            <Container maxWidth="xl" className="bg-black">
+                <Toolbar disableGutters className="bg-black">
                     <Typography
                         variant="h6"
                         noWrap
@@ -90,9 +98,11 @@ const MobileNav = () => {
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                 >
-                                    <Typography textAlign="center">
-                                        {page}
-                                    </Typography>
+                                    <Link to={`/${page.toLowerCase()}`}>
+                                        <Typography textAlign="center">
+                                            {page}
+                                        </Typography>
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -132,8 +142,8 @@ const MobileNav = () => {
                                 sx={{ p: 0 }}
                             >
                                 <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/2.jpg"
+                                    alt="Stephen Lyons"
+                                    src="/static/images/avatar/.jpg"
                                 />
                             </IconButton>
                         </Tooltip>
