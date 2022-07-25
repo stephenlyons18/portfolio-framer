@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -43,7 +47,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 25px; /* roundness of the scroll thumb */
     border: 7px solid #000; /* creates padding around scroll thumb */
 }
-h1 {
+/* h1 {
     font-size: 38px;
 }
 h2 {
@@ -128,4 +132,5 @@ p {
     p {
         font-size: 12px;
     }
-}
+} */
+

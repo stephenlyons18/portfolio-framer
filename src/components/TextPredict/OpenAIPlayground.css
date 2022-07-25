@@ -30,12 +30,6 @@
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     padding: 5px;
-
-    &:hover {
-        background: #5aff15;
-        color: #000;
-        border-color: #000;
-    }
 }
 .inputContainer {
     display: flex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-import './WelcomeText.scss';
+import './WelcomeText.css';
 const WelcomeText = () => {
     return (
         <div className="welcomeTextContainer">
@@ -14,7 +14,7 @@ const WelcomeText = () => {
                 animate="show"
             >
                 <motion.div className="welcomeText">
-                    <motion.h1 className="helloText">
+                    <motion.h1 className="helloText text-5xl text-bold pb-10">
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter
@@ -26,7 +26,7 @@ const WelcomeText = () => {
                     </motion.h1>
 
                     <motion.h2
-                        className="iAmClass"
+                        className="iAmClass text-4xl text-bold"
                         initial={{ x: '-100vw' }}
                         animate={{ x: '0vw' }}
                         transition={{ ease: 'easeInOut', delay: 4.5 }}
