@@ -32,7 +32,7 @@ function App() {
                     setCurrentPage={setCurrentPage}
                 />
             ) : null}
-            <MobileNav />
+
             <AnimatePresence exitBeforeEnter>
                 <Routes>
                     <Route path="/" element={<Home />} />

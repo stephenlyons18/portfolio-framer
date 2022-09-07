@@ -32,7 +32,7 @@ const ProjectCard: React.FC<Props> = ({
             initial="closed"
             whileHover="hover"
         >
-            <a href={projectUrl} target="_blank" rel="noreferrer">
+            <motion.a href={projectUrl} target="_blank" rel="noreferrer">
                 <motion.img
                     src={imgPath}
                     alt={altText}
@@ -40,13 +40,11 @@ const ProjectCard: React.FC<Props> = ({
                     variants={projectImgVariants}
                     whileHover="hover"
                 />
-            </a>
-
-            <h1>{projectTitle}</h1>
-
+            </motion.a>
+            <motion.h1>{projectTitle}</motion.h1>
             {isOpen ? (
-                <div className="project-text">
-                    <h2>Description</h2>
+                <motion.div className="project-text">
+                    <motion.h2>Description</motion.h2>
                     <motion.p
                         variants={projectTextVariants}
                         initial="closed"
@@ -54,17 +52,17 @@ const ProjectCard: React.FC<Props> = ({
                     >
                         {projectText}
                     </motion.p>
-                    <h2>Technologies</h2>
+                    <motion.h2>Technologies</motion.h2>
                     <motion.ul
                         variants={projectTextVariants}
                         initial="closed"
                         animate={isOpen ? 'open' : 'closed'}
                     >
                         {techStack.map((tech) => (
-                            <li key={tech}>{tech}</li>
+                            <motion.li key={tech}>{tech}</motion.li>
                         ))}
                     </motion.ul>
-                </div>
+                </motion.div>
             ) : null}
         </motion.div>
     );
@@ -74,7 +72,6 @@ const projectCardVariants = {
     open: {
         opacity: 1,
         width: '80%',
-
         transition: { duration: 0.5, ease: 'easeInOut' },
     },
     closed: {

@@ -1,46 +1,22 @@
-# Getting Started with Create React App
+- [Welcome to my Portfolio Site!](#welcome-to-my-portfolio-site)
+  - [What's in the repo?](#whats-in-the-repo)
+  - [Who am I?](#who-am-i)
+  - [How do I interact with the site?](#how-do-i-interact-with-the-site)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Welcome to my Portfolio Site!
 
-## Available Scripts
+It's a work in progress, but I'm excited to share it with you!
 
-In the project directory, you can run:
+Here's a link to the live site: https://www.stephenlyons.dev
 
-### `npm start`
+## What's in the repo?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This repo contains the source code for my portfolio site. It's built with Create React App, and uses TypeScript as the main programming language.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Who am I?
 
-### `npm test`
+I'm a software engineer and student at the California State University, Long Beach. I'm currently working on my B.S. in Computer Science, and I'm expected to graduate in Spring 2023. I'm also a member of the CSULB Association of Computing Machinery (ACM) chapter, and I'm the current Webmaster for the chapter.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How do I interact with the site?
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The site was built to have a clean and simple UI, but I am open to suggestions on how to improve it! I like using animations and transitions to make the site more interactive, so I'm always looking for new ways to make the site more engaging :)

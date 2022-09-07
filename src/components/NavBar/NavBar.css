@@ -5,8 +5,9 @@
     flex-direction: row;
     overflow: hidden;
     align-items: center;
-    background: #000;
+    
     border: 1px solid whiTe;
+    border-radius: 5px;
 }
 .mobileNavContainer {
     display: flex;
@@ -15,7 +16,7 @@
     flex-direction: row;
     overflow: hidden;
     align-items: center;
-    background: #000;
+    
     border: 1px solid whiTe;
 }
 
@@ -52,4 +53,17 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
+}
+.SwiperContainer {
+    
+    border: 1px solid #5aff15;
+    border-radius: 5px;
+    
+    
+}
+.swiperItem {
+    border: 1px solid #5aff15;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
 }

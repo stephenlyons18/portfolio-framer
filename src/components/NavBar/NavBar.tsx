@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,8 @@ import './NavBar.css';
 import { Chat, LinkedinLogo, GithubLogo, List } from 'phosphor-react';
 import { SwipeEventData, useSwipeable } from 'react-swipeable';
 import { useNavigate } from 'react-router-dom';
+import SwipeIcon from '@mui/icons-material/Swipe';
+import styled from '@emotion/styled';
 
 interface NavBarProps {
     currentPage: number;
@@ -124,25 +127,27 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
     ) : (
         <>
             {/* create a home button on the left, with three nav buttons on the right*/}
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-center fixed bottom-0 bg-white/30 backdrop-blur-lg w-full">
                 <div>
                     <Link to="/" className="noDecor">
                         <motion.div
                             whileTap={{ scale: 0.9 }}
-                            className="NavLinkStyle"
+                            className="NavLinkStyle h-full"
                         >
                             <h3 style={{ margin: '0px' }}>Stephen Lyons</h3>
+                            <hr />
                             <h5 style={{ margin: '0px' }}>Software Engineer</h5>
                         </motion.div>
                     </Link>
                 </div>
                 <div {...handlers}>
-                    <motion.div className="grid grid-cols-3 grid-rows-2 text-white g-2">
-                        <>
+                    <div className="flex flex-col justify-center items-center SwiperContainer w-full p-2 h-full">
+                        <motion.div className="flex flex-row">
                             <motion.p
                                 variants={SwipeNavVariants}
                                 initial="hidden"
                                 animate={currentPage === 0 ? 'open' : 'closed'}
+                                className="swiperItem"
                             >
                                 Home
                             </motion.p>
@@ -150,6 +155,7 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
                                 variants={SwipeNavVariants}
                                 initial="hidden"
                                 animate={currentPage === 1 ? 'open' : 'closed'}
+                                className="swiperItem"
                             >
                                 Projects
                             </motion.p>
@@ -157,12 +163,18 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
                                 variants={SwipeNavVariants}
                                 initial="hidden"
                                 animate={currentPage === 2 ? 'open' : 'closed'}
+                                className="swiperItem"
                             >
                                 About
                             </motion.p>
+                        </motion.div>
+                        <>
+                            <SwipeIcon
+                                className="text-white"
+                                style={{ fontSize: '25px', marginTop: '10px' }}
+                            />
                         </>
-                        <div></div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </>
@@ -171,14 +183,21 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage, setCurrentPage }) => {
 
 const SwipeNavVariants = {
     open: {
-        backgroundColor: '#fff',
+        backgroundColor: '#2F4858',
         transition: {
             duration: 0.5,
             ease: 'easeInOut',
         },
+        color: '#fff',
+        scale: 1.2,
     },
     closed: {
-        backgroundColor: '#000',
+        background: '#009fff' /* fallback for old browsers */,
+        background:
+            '-webkit-linear-gradient(to right, #009fff, #ec2f4b);' /* Chrome 10-25, Safari 5.1-6 */,
+        background:
+            'linear-gradient(to right, #009fff, #ec2f4b)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
+
         transition: {
             duration: 0.5,
             ease: 'easeInOut',

@@ -17,6 +17,15 @@ export default function Home() {
     //use react-in-viewport to make the the picture fade in when it is in view
     const [isInViewport, setIsInViewport] = useState(false);
     const [resumeOpen, setResumeOpen] = useState(false);
+
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    // const file = '../../../public/stephen-lyons-resume.pdf';
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+
     const Block = (props: { inViewport: boolean }) => {
         return (
             <div className="flex flex-col items-center p-6 shadow-lg w-11/12">
@@ -82,17 +91,14 @@ export default function Home() {
                     </motion.a>
                 </div>
                 {resumeOpen && (
-                    <motion.div
-                        transition={{
-                            type: 'spring',
-                            stiffness: 60,
-                            damping: 60,
-                        }}
-                    >
-                        <Document file="../../assets/files/stephen-lyons-resume.pdf">
-                            <Page pageNumber={1} />
-                        </Document>
-                    </motion.div>
+                    <div>
+                        {/* <Document
+                            file={file}
+                            onLoadSuccess={onDocumentLoadSuccess}
+                        >
+                            <Page pageNumber={pageNumber} />
+                        </Document> */}
+                    </div>
                 )}
             </div>
         );

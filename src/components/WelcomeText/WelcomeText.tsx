@@ -35,9 +35,11 @@ const WelcomeText = () => {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(4500)
-                                    .typeString('i am a student()')
+                                    .typeString(
+                                        'i am a computer science student()'
+                                    )
                                     .pauseFor(1000)
-                                    .deleteChars(9)
+                                    .deleteChars(26)
                                     .typeString('web developer </>')
                                     .pauseFor(1000)
                                     .deleteChars(17)
